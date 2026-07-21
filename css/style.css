@@ -66,6 +66,7 @@ a { color: var(--teal); text-decoration: none; }
 }
 
 .brand { display: inline-flex; align-items: center; gap: 10px; }
+.brand-logo { height: 44px; width: auto; display: block; }
 .brand-mark { width: 34px; height: 34px; fill: var(--teal); }
 .brand-text {
   font-family: var(--font-display);
