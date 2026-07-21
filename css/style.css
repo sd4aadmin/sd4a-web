@@ -144,7 +144,7 @@ a { color: var(--teal); text-decoration: none; }
 
 .hero-veil {
   position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(4, 52, 58, 0.93) 0%, rgba(4, 52, 58, 0.78) 45%, rgba(10, 120, 129, 0.45) 100%);
+  background: linear-gradient(100deg, rgba(4, 52, 58, 0.96) 0%, rgba(4, 52, 58, 0.88) 50%, rgba(6, 74, 82, 0.72) 100%);
 }
 .hero-grid-lines {
   position: absolute; inset: 0; pointer-events: none;
@@ -166,6 +166,7 @@ a { color: var(--teal); text-decoration: none; }
   max-width: 13ch;
 }
 .hero h1 .accent { color: var(--mint); }
+.hero h1, .hero-sub { text-shadow: 0 2px 24px rgba(4, 52, 58, 0.55); }
 .hero-sub {
   font-size: clamp(16px, 1.9vw, 19px);
   color: rgba(255, 255, 255, 0.82);
