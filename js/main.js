@@ -30,10 +30,14 @@ if (slides.length > 1 && dotsBox) {
   restartTimer();
 }
 
-// ── Sombra del topbar ────────────────────────────────────────────
+// ── Sombra del topbar + regla de avance de lectura ───────────────
 const topbar = document.getElementById("topbar");
+const scrollRuler = document.getElementById("scrollRuler");
 window.addEventListener("scroll", () => {
   topbar.classList.toggle("scrolled", window.scrollY > 10);
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  scrollRuler.style.width = `${Math.min(100, Math.max(0, pct))}%`;
 }, { passive: true });
 
 // ── Menú móvil ───────────────────────────────────────────────────

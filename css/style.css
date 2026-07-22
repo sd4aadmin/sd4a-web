@@ -37,6 +37,13 @@ body {
 img { max-width: 100%; display: block; }
 a { color: var(--teal); text-decoration: none; }
 
+/* Foco visible accesible en toda la página */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
 
 /* ── Eyebrow (etiqueta pequeña sobre títulos) ── */
@@ -60,6 +67,14 @@ a { color: var(--teal); text-decoration: none; }
   transition: box-shadow 0.25s ease;
 }
 .topbar.scrolled { box-shadow: 0 8px 28px rgba(4, 52, 58, 0.10); }
+
+/* Regla de avance de lectura — detalle de firma (estética de plano) */
+.scroll-ruler {
+  position: absolute; left: 0; bottom: -1px; height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--teal), var(--mint));
+  transition: width 0.1s linear;
+}
 .topbar-inner {
   display: flex; align-items: center; gap: 28px;
   height: 68px;
@@ -293,8 +308,14 @@ a { color: var(--teal); text-decoration: none; }
 }
 .plan-card p, .plan-card ul { color: var(--muted); font-size: 15px; margin: 0; }
 .plan-card ul { padding-left: 18px; display: grid; gap: 6px; }
-.plan-card .link { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 14.5px; }
-.plan-card .link:hover { color: var(--teal-2); }
+.plan-card .link { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 14.5px; transition: transform 0.2s ease; }
+.plan-card .link:hover { color: var(--teal-2); transform: translateX(3px); }
+
+.service-icon {
+  width: 28px; height: 28px;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
 
 .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 
@@ -329,6 +350,14 @@ a { color: var(--teal); text-decoration: none; }
   background: rgba(155, 227, 191, 0.10);
   transform: translateY(-3px);
 }
+.sector-icon {
+  width: 26px; height: 26px;
+  color: var(--mint);
+  margin-bottom: 14px;
+  opacity: 0.9;
+  transition: transform 0.25s ease;
+}
+.sector:hover .sector-icon { transform: translateY(-2px) scale(1.05); }
 .sector h3 {
   font-family: var(--font-mono);
   font-size: 13px; font-weight: 500; letter-spacing: 0.18em;
@@ -485,14 +514,25 @@ body.lb-locked { overflow: hidden; }
 .portal-note p { font-size: 14px; color: var(--muted); margin: 0 0 10px; }
 
 /* ── Footer ── */
-.footer { background: var(--ink); color: rgba(255, 255, 255, 0.65); padding: 26px 0; }
-.footer-inner {
-  display: flex; align-items: center; justify-content: space-between; gap: 16px;
-  flex-wrap: wrap;
+.footer { background: var(--ink); color: rgba(255, 255, 255, 0.65); padding: 56px 0 0; }
+.footer-grid {
+  display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 40px;
+  padding-bottom: 40px;
 }
-.footer small { font-size: 12.5px; }
-.footer a { color: var(--mint); font-size: 13px; font-weight: 600; }
-.footer a:hover { text-decoration: underline; }
+.footer-brand p { margin: 12px 0 0; font-size: 14px; color: rgba(255, 255, 255, 0.55); max-width: 34ch; line-height: 1.65; }
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--mint); margin: 0 0 14px;
+}
+.footer-links { display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { color: rgba(255, 255, 255, 0.75); font-size: 14.5px; font-weight: 500; transition: color 0.2s; }
+.footer-links a:hover { color: var(--mint); }
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 20px 0;
+}
+.footer-bottom small { font-size: 12.5px; color: rgba(255, 255, 255, 0.45); }
 
 /* ═══════════ REVEAL ═══════════ */
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
@@ -510,6 +550,8 @@ body.lb-locked { overflow: hidden; }
   .cards-3, .sector-grid, .project-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .bim-band { grid-template-columns: 1fr; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
 
   .nav-toggle { display: flex; }
   .nav {

@@ -10,12 +10,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon-180.png" />
+  <meta name="theme-color" content="#04343A" />
+
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
 <body>
   <!-- ══════════ TOPBAR ══════════ -->
   <header class="topbar" id="topbar">
+    <div class="scroll-ruler" id="scrollRuler" aria-hidden="true"></div>
     <div class="container topbar-inner">
       <a class="brand" href="#inicio" aria-label="SD4A — inicio">
         <img class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
@@ -140,12 +146,30 @@
         </div>
 
         <div class="sector-grid">
-          <article class="sector reveal"><h3>Edificaciones</h3><p>Diseño y supervisión en concreto y acero: residencial, comercial e institucional.</p></article>
-          <article class="sector reveal"><h3>Puentes</h3><p>Puentes vehiculares y peatonales de distintas luces y complejidades.</p></article>
-          <article class="sector reveal"><h3>Infraestructura</h3><p>Obras viales e infraestructura asociada.</p></article>
-          <article class="sector reveal"><h3>Hidrocarburos</h3><p>Estructuras para petróleo y gas con foco en seguridad y eficiencia.</p></article>
-          <article class="sector reveal"><h3>Marítimo</h3><p>Puertos, muelles y plataformas.</p></article>
-          <article class="sector reveal"><h3>Interventoría</h3><p>Interventoría de diseños y de obra para asegurar calidad y seguridad.</p></article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 12h.01M15 12h.01M9 8h.01M15 8h.01"/></svg>
+            <h3>Edificaciones</h3><p>Diseño y supervisión en concreto y acero: residencial, comercial e institucional.</p>
+          </article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20v-6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v6M10 20v-9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v9M16 20v-6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v6M2 12l20-4"/></svg>
+            <h3>Puentes</h3><p>Puentes vehiculares y peatonales de distintas luces y complejidades.</p>
+          </article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>
+            <h3>Infraestructura</h3><p>Obras viales e infraestructura asociada.</p>
+          </article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M9 6h6M6 9h12l1 5H5l1-5Z"/><path d="M4 21h16M6 21v-7M18 21v-7M9 21v-4h6v4"/></svg>
+            <h3>Hidrocarburos</h3><p>Estructuras para petróleo y gas con foco en seguridad y eficiencia.</p>
+          </article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0M5 18V9l4-2v5M12 18v-9l4-3v8"/></svg>
+            <h3>Marítimo</h3><p>Puertos, muelles y plataformas.</p>
+          </article>
+          <article class="sector reveal">
+            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <h3>Interventoría</h3><p>Interventoría de diseños y de obra para asegurar calidad y seguridad.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -160,16 +184,19 @@
 
         <div class="cards-3">
           <article class="plan-card service reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16l4-6 3 4 4-7"/></svg>
             <h3>Diseño estructural</h3>
             <p>Concreto, acero y soluciones mixtas según el alcance del proyecto, cumpliendo NSR-10.</p>
             <a class="link" href="#contacto">Cotizar →</a>
           </article>
           <article class="plan-card service reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v3l2 2"/></svg>
             <h3>Revisión y reforzamiento</h3>
             <p>Diagnóstico, patología estructural, propuesta de refuerzo y documentación para intervención.</p>
             <a class="link" href="#contacto">Consultar →</a>
           </article>
           <article class="plan-card service reveal">
+            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5Z"/><path d="M3 7l9 5 9-5M12 12v9"/></svg>
             <h3>BIM / Revit</h3>
             <p>Modelado, coordinación entre disciplinas y extracción de planos y cantidades.</p>
             <a class="link" href="#contacto">Hablar →</a>
@@ -307,10 +334,30 @@
 
   <!-- ══════════ FOOTER ══════════ -->
   <footer class="footer">
-    <div class="container footer-inner">
-      <span class="brand-text small">SD<em>4</em>A</span>
-      <small>© 2026 SD4A Ingeniería Estructural — Structural Design For Art. Todos los derechos reservados.</small>
-      <a href="https://pagos-sd-4-a.vercel.app/login">Portal de clientes</a>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text small">SD<em>4</em>A</span>
+        <p>Structural Design For Art — ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
+      </div>
+
+      <nav class="footer-links" aria-label="Enlaces del sitio">
+        <p class="footer-col-title">Navegación</p>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="footer-links">
+        <p class="footer-col-title">Contacto</p>
+        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>
+        <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
+        <a href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal →</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <small>© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</small>
     </div>
   </footer>
 
