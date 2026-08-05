@@ -15,6 +15,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon-180.png" />
   <meta name="theme-color" content="#04343A" />
 
+  <!-- Open Graph / redes sociales -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SD4A Ingeniería Estructural" />
+  <meta property="og:title" content="SD4A — Ingeniería Estructural | Structural Design For Art" />
+  <meta property="og:description" content="Diseño estructural para el arte de construir: edificaciones, puentes, infraestructura, estructuras marítimas y BIM en Colombia." />
+  <meta property="og:image" content="https://sd4a-web.vercel.app/img/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://sd4a-web.vercel.app" />
+  <meta property="og:locale" content="es_CO" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SD4A — Ingeniería Estructural" />
+  <meta name="twitter:description" content="Diseño estructural para el arte de construir." />
+  <meta name="twitter:image" content="https://sd4a-web.vercel.app/img/og-image.jpg" />
+
   <link rel="stylesheet" href="./css/style.css" />
 </head>
 
@@ -50,10 +65,10 @@
     <!-- ══════════ HERO ══════════ -->
     <section id="inicio" class="hero">
       <div class="hero-slides" aria-hidden="true">
-        <img src="./img/aeropuerto cartagena 1.png" class="slide active" alt="" />
-        <img src="./img/POLIDEPORTIVO3.png" class="slide" alt="" />
-        <img src="./img/puente rodano 1.png" class="slide" alt="" />
-        <img src="./img/ARMADA DE SAN ANDRES.png" class="slide" alt="" />
+        <img src="./img/aeropuerto cartagena 1.webp" class="slide active" alt="" />
+        <img src="./img/POLIDEPORTIVO3.webp" class="slide" alt="" />
+        <img src="./img/puente rodano 1.webp" class="slide" alt="" />
+        <img src="./img/ARMADA DE SAN ANDRES.webp" class="slide" alt="" />
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
       <div class="hero-grid-lines" aria-hidden="true"></div>
@@ -147,7 +162,7 @@
               información confiable para la obra.
             </p>
           </div>
-          <img src="./img/MODELO DE ANÁLISIS PLATAFORMAS PROYECTO 10K.JPG" alt="Modelo de análisis estructural BIM" />
+          <img src="./img/MODELO DE ANÁLISIS PLATAFORMAS PROYECTO 10K.webp" alt="Modelo de análisis estructural BIM" />
         </div>
       </div>
     </section>
@@ -230,66 +245,75 @@
           <p>Haz clic en cualquier proyecto para verlo en grande.</p>
         </div>
 
+        <div class="filter-bar reveal" id="filterBar" role="group" aria-label="Filtrar proyectos por categoría">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="edificacion">Edificación</button>
+          <button class="filter-btn" data-filter="puentes">Puentes</button>
+          <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
+          <button class="filter-btn" data-filter="maritimo">Marítimo</button>
+          <button class="filter-btn" data-filter="hidrocarburos">Hidrocarburos</button>
+        </div>
+
         <div class="project-grid" id="projectGrid">
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
                         <div class="project-media">
-<img src="./img/aeropuerto cartagena 2.png" alt="Aeropuerto de Cartagena" loading="lazy" />
+<img src="./img/aeropuerto cartagena 2.webp" alt="Aeropuerto de Cartagena" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Infraestructura</span><strong>Aeropuerto de Cartagena</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="edificacion">
                         <div class="project-media">
-<img src="./img/POLIDEPORTIVO 1.png" alt="Escenario deportivo Santa Ana" loading="lazy" />
+<img src="./img/POLIDEPORTIVO 1.webp" alt="Escenario deportivo Santa Ana" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Edificación</span><strong>Escenario Deportivo Santa Ana — Valle del Cauca</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="puentes">
                         <div class="project-media">
-<img src="./img/puente rodano 2.png" alt="Puente Ródano" loading="lazy" />
+<img src="./img/puente rodano 2.webp" alt="Puente Ródano" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Puentes</span><strong>Puente Ródano</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="maritimo">
                         <div class="project-media">
-<img src="./img/ARMADA DE SAN ANDRES.png" alt="Estructura Armada de San Andrés" loading="lazy" />
+<img src="./img/ARMADA DE SAN ANDRES.webp" alt="Estructura Armada de San Andrés" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Marítimo</span><strong>Armada Nacional — San Andrés</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="hidrocarburos">
                         <div class="project-media">
-<img src="./img/TANQUE PUMA BELIZE.png" alt="Tanque Puma Belize" loading="lazy" />
+<img src="./img/TANQUE PUMA BELIZE.webp" alt="Tanque Puma Belize" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Hidrocarburos</span><strong>Tanque PUMA — Belize</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="edificacion">
                         <div class="project-media">
-<img src="./img/clinica procardio 1.png" alt="Clínica Procardio" loading="lazy" />
+<img src="./img/clinica procardio 1.webp" alt="Clínica Procardio" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Edificación</span><strong>Clínica Procardio</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="puentes">
                         <div class="project-media">
-<img src="./img/PUENTE VILLA RESTREPO.png" alt="Puente Villa Restrepo" loading="lazy" />
+<img src="./img/PUENTE VILLA RESTREPO.webp" alt="Puente Villa Restrepo" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Puentes</span><strong>Puente Villa Restrepo</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
                         <div class="project-media">
-<img src="./img/MURO DE CONTENCION SAN GIL.png" alt="Muro de contención San Gil" loading="lazy" />
+<img src="./img/MURO DE CONTENCION SAN GIL.webp" alt="Muro de contención San Gil" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Infraestructura</span><strong>Muro de Contención — San Gil</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0">
+          <figure class="project reveal" tabindex="0" data-cat="maritimo">
                         <div class="project-media">
-<img src="./img/FARO SAN ANDRES.jpg" alt="Faro San Andrés" loading="lazy" />
+<img src="./img/FARO SAN ANDRES.webp" alt="Faro San Andrés" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Marítimo</span><strong>Faro — San Andrés</strong></figcaption>
@@ -414,6 +438,11 @@
     </figure>
     <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
   </div>
+
+  <!-- ══════════ VOLVER ARRIBA ══════════ -->
+  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
 
   <script src="./js/main.js"></script>
 </body>

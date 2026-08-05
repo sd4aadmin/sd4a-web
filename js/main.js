@@ -145,6 +145,34 @@ if (statNums.length) {
   statNums.forEach((el) => statsIo.observe(el));
 }
 
+// ── Filtro de proyectos por categoría ─────────────────────────────
+const filterBar = document.getElementById("filterBar");
+if (filterBar) {
+  const filterBtns = [...filterBar.querySelectorAll(".filter-btn")];
+  const allProjects = [...document.querySelectorAll("#projectGrid .project")];
+  filterBar.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
+    const filter = btn.dataset.filter;
+    allProjects.forEach((p) => {
+      const show = filter === "all" || p.dataset.cat === filter;
+      p.classList.toggle("filtered-out", !show);
+    });
+  });
+}
+
+// ── Botón volver arriba ───────────────────────────────────────────
+const backToTop = document.getElementById("backToTop");
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("visible", window.scrollY > 700);
+  }, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+  });
+}
+
 // ── Lightbox de proyectos ────────────────────────────────────────
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lbImg");
