@@ -75,7 +75,16 @@ if ("IntersectionObserver" in window && sections.length) {
   sections.forEach((s) => spy.observe(s));
 }
 
-// ── Aparición al hacer scroll ────────────────────────────────────
+// ── Aparición al hacer scroll (con cascada dentro de cada grilla) ─
+const STAGGER_GROUPS = [".cards-3", ".sector-grid", ".project-grid", ".steps"];
+STAGGER_GROUPS.forEach((sel) => {
+  document.querySelectorAll(sel).forEach((group) => {
+    [...group.children].forEach((child, i) => {
+      if (child.classList.contains("reveal")) child.style.setProperty("--stagger", i);
+    });
+  });
+});
+
 const reveals = document.querySelectorAll(".reveal");
 if (reduced || !("IntersectionObserver" in window)) {
   reveals.forEach((el) => el.classList.add("in"));
@@ -89,6 +98,51 @@ if (reduced || !("IntersectionObserver" in window)) {
     });
   }, { threshold: 0.12 });
   reveals.forEach((el) => io.observe(el));
+}
+
+// ── Parallax sutil del hero ───────────────────────────────────────
+const heroEl = document.getElementById("inicio");
+if (heroEl && !reduced) {
+  const slidesLayer = heroEl.querySelector(".hero-slides");
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const rect = heroEl.getBoundingClientRect();
+      if (rect.bottom > 0) {
+        slidesLayer.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+      }
+      ticking = false;
+    });
+  }, { passive: true });
+}
+
+// ── Contador animado con cifras reales del contenido ──────────────
+const statNums = document.querySelectorAll(".stat-num[data-count-source]");
+if (statNums.length) {
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  function animateCount(el, target) {
+    if (reduced) { el.textContent = target; return; }
+    const duration = 900;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min(1, (now - start) / duration);
+      el.textContent = Math.round(target * easeOut(p));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const statsIo = new IntersectionObserver((entries, obs) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const count = document.querySelectorAll(el.dataset.countSource).length;
+      animateCount(el, count);
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach((el) => statsIo.observe(el));
 }
 
 // ── Lightbox de proyectos ────────────────────────────────────────

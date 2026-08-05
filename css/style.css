@@ -534,8 +534,12 @@ body.lb-locked { overflow: hidden; }
 }
 .footer-bottom small { font-size: 12.5px; color: rgba(255, 255, 255, 0.45); }
 
-/* ═══════════ REVEAL ═══════════ */
-.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+/* ═══════════ REVEAL (con cascada opcional) ═══════════ */
+.reveal {
+  opacity: 0; transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+  transition-delay: calc(var(--stagger, 0) * 70ms);
+}
 .reveal.in { opacity: 1; transform: none; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -543,7 +547,79 @@ body.lb-locked { overflow: hidden; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .hero-slides .slide { transition: none; animation: none !important; }
   .strip-track { animation: none; }
+  .hero-slides, .hero-veil { transform: none !important; }
+  .wa-btn::before { animation: none !important; }
 }
+
+/* ═══════════ CIFRAS (franja bajo el hero) ═══════════ */
+.stats-strip {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 30px 0;
+  border-bottom: 1px solid var(--line);
+}
+.stat { text-align: center; padding: 0 12px; }
+.stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: -1px;
+  color: var(--teal);
+  line-height: 1;
+}
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  font-size: 12.5px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* ═══════════ OVERLAY EN TARJETAS DE PROYECTO (solo la imagen) ═══════════ */
+.project-media { position: relative; overflow: hidden; }
+.project-media::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(4,52,58,0.55) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+.project:hover .project-media::after, .project:focus-visible .project-media::after { opacity: 1; }
+.project-zoom-hint {
+  position: absolute; top: 14px; right: 14px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,0.92);
+  color: var(--teal);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transform: scale(0.8);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+.project:hover .project-zoom-hint, .project:focus-visible .project-zoom-hint {
+  opacity: 1; transform: scale(1);
+}
+
+/* ═══════════ PULSO EN BOTÓN DE WHATSAPP ═══════════ */
+.wa-btn { position: relative; }
+.wa-btn::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 12px;
+  border: 2px solid #25d366;
+  opacity: 0;
+  animation: wa-pulse 2.6s ease-out infinite;
+}
+@keyframes wa-pulse {
+  0%   { opacity: 0.55; transform: scale(1); }
+  80%  { opacity: 0; transform: scale(1.12); }
+  100% { opacity: 0; transform: scale(1.12); }
+}
+
+/* ═══════════ PARALLAX DEL HERO ═══════════ */
+.hero-slides, .hero-veil { will-change: transform; }
 
 /* ═══════════ RESPONSIVE ═══════════ */
 @media (max-width: 960px) {
