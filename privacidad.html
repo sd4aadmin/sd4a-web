@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Política de Privacidad | SD4A Ingeniería Estructural</title>
+  <meta name="description" content="Política de tratamiento de datos personales del Portal SD4A, conforme a la Ley 1581 de 2012 (Habeas Data) de Colombia." />
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon-180.png" />
+  <meta name="theme-color" content="#04343A" />
+
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+  <header class="topbar" id="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="./index.html" aria-label="SD4A — inicio">
+        <img class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
+      </a>
+      <nav class="nav" id="nav" aria-label="Navegación">
+        <a href="./index.html">← Volver al inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section legal-page">
+      <div class="container" style="max-width: 760px;">
+        <div class="sheet-head">
+          <p class="eyebrow">Documento legal</p>
+          <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(28px,4vw,38px); letter-spacing: -1px; margin: 0 0 6px;">Política de Privacidad</h1>
+          <p style="color: var(--muted); font-size: 14px;">Última actualización: agosto de 2026</p>
+        </div>
+
+        <div class="legal-body">
+          <p>
+            SD4A Ingeniería Estructural ("SD4A", "nosotros") es responsable del tratamiento de los datos
+            personales que recolecta a través de su Portal de Clientes (<a href="https://pagos-sd-4-a.vercel.app" target="_blank" rel="noopener noreferrer">pagos-sd-4-a.vercel.app</a>)
+            y de este sitio web, en cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013 de la
+            República de Colombia sobre protección de datos personales (Habeas Data).
+          </p>
+
+          <h2>1. ¿Qué datos recolectamos?</h2>
+          <ul>
+            <li><strong>Datos de la cuenta:</strong> nombre completo, correo electrónico, teléfono y empresa (si aplica), para clientes, ingenieros y administradores del portal. La contraseña se almacena siempre cifrada (bcrypt) — nunca en texto plano ni visible para nadie, incluido el equipo de SD4A.</li>
+            <li><strong>Datos del proyecto:</strong> nombre, valor, fechas y archivos técnicos (planos, memorias, modelos) asociados al proyecto contratado.</li>
+            <li><strong>Datos de facturación electrónica (opcionales):</strong> razón social, NIT, correo y teléfono de facturación, únicamente cuando el cliente solicita expresamente factura electrónica al realizar un pago.</li>
+            <li><strong>Datos de pago:</strong> referencia y estado de la transacción proporcionados por la pasarela Wompi. <strong>SD4A nunca almacena números de tarjeta ni claves financieras</strong> — esos datos los procesa directamente Wompi S.A., entidad autorizada y vigilada para procesamiento de pagos en Colombia.</li>
+            <li><strong>Datos técnicos de acceso:</strong> dirección IP y marca de tiempo de cada inicio de sesión (exitoso o fallido), registrados automáticamente por motivos de seguridad para prevenir accesos no autorizados.</li>
+            <li><strong>Cookies:</strong> únicamente cookies técnicas necesarias para mantener la sesión iniciada. No usamos cookies de rastreo publicitario ni las compartimos con redes de mercadeo.</li>
+          </ul>
+
+          <h2>2. ¿Dónde se almacenan los datos?</h2>
+          <ul>
+            <li>La información de cuentas, proyectos y pagos se guarda en una base de datos alojada en <strong>Railway</strong> (infraestructura en la nube).</li>
+            <li>Los archivos del proyecto (planos, memorias, entregables) se almacenan en <strong>Google Drive</strong>, bajo la cuenta corporativa de SD4A. El cliente nunca accede directamente a Drive; el portal media cada descarga y verifica los permisos.</li>
+            <li>La aplicación web se aloja en <strong>Vercel</strong>.</li>
+          </ul>
+
+          <h2>3. ¿Con quién se comparten los datos?</h2>
+          <p>Solo compartimos los datos estrictamente necesarios con los siguientes encargados del tratamiento, quienes procesan la información en nombre de SD4A y bajo sus propias políticas de seguridad:</p>
+          <ul>
+            <li><strong>Wompi S.A.</strong> — procesamiento de pagos en línea.</li>
+            <li><strong>Google LLC</strong> — almacenamiento de archivos de proyecto (Google Drive).</li>
+            <li><strong>Brevo</strong> y/o servidor SMTP de Gmail — envío de correos transaccionales (bienvenida, confirmación de pago, notificaciones de archivos).</li>
+            <li><strong>Vercel Inc.</strong> y <strong>Railway Corp.</strong> — hosting de la aplicación y la base de datos.</li>
+          </ul>
+          <p>SD4A no vende, alquila ni cede sus datos a terceros con fines publicitarios.</p>
+
+          <h2>4. ¿Para qué usamos sus datos?</h2>
+          <ul>
+            <li>Crear y administrar su cuenta en el portal.</li>
+            <li>Dar seguimiento al proyecto contratado: avance, archivos y pagos.</li>
+            <li>Generar enlaces de pago y confirmar los pagos realizados.</li>
+            <li>Emitir factura electrónica cuando usted lo solicita expresamente.</li>
+            <li>Enviarle notificaciones relacionadas con su proyecto.</li>
+            <li>Prevenir accesos no autorizados y proteger la seguridad de su cuenta.</li>
+            <li>Cumplir obligaciones legales, contractuales, contables y tributarias.</li>
+          </ul>
+
+          <h2>5. Sus derechos como titular de los datos</h2>
+          <p>De acuerdo con la ley colombiana, usted tiene derecho a:</p>
+          <ul>
+            <li>Conocer, actualizar y rectificar sus datos personales.</li>
+            <li>Solicitar prueba de la autorización otorgada para el tratamiento de sus datos.</li>
+            <li>Ser informado sobre el uso que se le ha dado a sus datos.</li>
+            <li>Revocar la autorización y/o solicitar la supresión del dato, cuando no exista un deber legal o contractual que lo impida (por ejemplo, mientras un proyecto esté activo).</li>
+            <li>Acceder de forma gratuita a sus datos personales.</li>
+            <li>Presentar quejas ante la Superintendencia de Industria y Comercio (SIC) por infracciones a la ley.</li>
+          </ul>
+          <p>
+            Para ejercer cualquiera de estos derechos, escríbanos a
+            <a href="mailto:sd4asas@gmail.com"> sd4asas@gmail.com</a> indicando el derecho que desea ejercer
+            y los datos que permitan identificarlo. Responderemos su solicitud dentro de los plazos que
+            establece la ley.
+          </p>
+
+          <h2>6. Tiempo de conservación</h2>
+          <p>
+            Conservamos sus datos mientras exista una relación contractual vigente (mientras su proyecto
+            esté activo) y, posteriormente, durante el tiempo que exija la normatividad aplicable
+            (por ejemplo, obligaciones contables y tributarias).
+          </p>
+
+          <h2>7. Seguridad de la información</h2>
+          <p>
+            Aplicamos medidas técnicas razonables para proteger sus datos: contraseñas cifradas (bcrypt),
+            comunicación cifrada mediante HTTPS/TLS, sesiones con expiración automática, bloqueo temporal
+            de la cuenta tras varios intentos fallidos de acceso, y control de acceso según el rol de
+            cada usuario (cliente, ingeniero o administrador).
+          </p>
+
+          <h2>8. Cambios a esta política</h2>
+          <p>
+            SD4A podrá actualizar esta política cuando sea necesario. La fecha de la última actualización
+            se indica al inicio de este documento.
+          </p>
+
+          <div class="legal-note">
+            <p>
+              <strong>Nota:</strong> este documento describe de forma transparente y fiel las prácticas
+              reales de manejo de datos del Portal SD4A al momento de su publicación. Se recomienda
+              revisión por un abogado especializado en protección de datos para garantizar el cumplimiento
+              normativo integral antes de su uso formal ante terceros.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="brand-text small">SD<em>4</em>A</span>
+        <p>Structural Design For Art — ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
+      </div>
+      <nav class="footer-links" aria-label="Enlaces del sitio">
+        <p class="footer-col-title">Navegación</p>
+        <a href="./index.html">Inicio</a>
+        <a href="./terminos.html">Términos y condiciones</a>
+      </nav>
+      <div class="footer-links">
+        <p class="footer-col-title">Contacto</p>
+        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>
+        <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <small>© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+</body>
+</html>
