@@ -173,6 +173,19 @@ if (backToTop) {
   });
 }
 
+// ── Aviso de cookies ──────────────────────────────────────────────
+const cookieBanner = document.getElementById("cookieBanner");
+const cookieAccept = document.getElementById("cookieAccept");
+if (cookieBanner && cookieAccept) {
+  if (!localStorage.getItem("sd4a_cookies_accepted")) {
+    cookieBanner.hidden = false;
+  }
+  cookieAccept.addEventListener("click", () => {
+    localStorage.setItem("sd4a_cookies_accepted", "true");
+    cookieBanner.hidden = true;
+  });
+}
+
 // ── Lightbox de proyectos ────────────────────────────────────────
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lbImg");
