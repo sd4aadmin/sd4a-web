@@ -7,9 +7,9 @@
   <meta name="description" content="Términos y condiciones de uso del Portal SD4A." />
   <meta name="robots" content="noindex" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16.png" />
@@ -17,30 +17,39 @@
   <meta name="theme-color" content="#04343A" />
 
   <link rel="stylesheet" href="./css/style.css" />
+  <script>document.documentElement.className += " js";</script>
 </head>
 
 <body>
-  <header class="topbar" id="topbar">
-    <div class="container topbar-inner">
-      <a class="brand" href="./index.html" aria-label="SD4A — inicio">
-        <img class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
-      </a>
-      <nav class="nav" id="nav" aria-label="Navegación">
-        <a href="./index.html">← Volver al inicio</a>
-      </nav>
-    </div>
+  <div class="cookiebar" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+    <p>Usamos cookies esenciales para el funcionamiento del sitio. Al continuar navegando, aceptas nuestra <a href="./privacidad.html">Política de privacidad</a>.</p>
+    <button class="btn" id="cookieAccept" type="button">Aceptar</button>
+  </div>
+
+  <header class="bar" id="top">
+    <a class="brand" href="./index.html" aria-label="SD4A — inicio">
+      <img src="./img/logo-sd4a.png" width="100" height="34" alt="SD4A Ingeniería estructural" />
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <a href="./index.html#obras">Obras</a>
+      <a href="./index.html#servicios">Servicios</a>
+      <a href="./index.html#proceso">Proceso</a>
+      <a href="./index.html#nosotros">Nosotros</a>
+      <a href="./index.html#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal</a>
+    <button class="menu" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </header>
 
   <main>
-    <section class="section legal-page">
-      <div class="container" style="max-width: 760px;">
-        <div class="sheet-head">
-          <p class="eyebrow">Documento legal</p>
-          <h1 style="font-family: var(--font-display); font-weight: 900; font-size: clamp(28px,4vw,38px); letter-spacing: -1px; margin: 0 0 6px;">Términos y Condiciones</h1>
-          <p style="color: var(--muted); font-size: 14px;">Última actualización: agosto de 2026</p>
-        </div>
-
-        <div class="legal-body">
+    <section class="legal">
+      <h1>Términos y Condiciones</h1>
+      <div class="toc">
+        <p class="stamp">Última actualización<br />agosto de 2026</p>
+        <a href="./privacidad.html">Política de privacidad</a>
+        <a href="./index.html">Volver al inicio</a>
+      </div>
+      <div class="legal-body">
           <p>
             Estos términos regulan el uso del Portal de Clientes de SD4A Ingeniería Estructural
             (<a href="https://pagos-sd-4-a.vercel.app" target="_blank" rel="noopener noreferrer">pagos-sd-4-a.vercel.app</a>,
@@ -123,30 +132,26 @@
             <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer"> +57 311 222 8420</a>.
           </p>
         </div>
-      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="brand-text small">SD<em>4</em>A</span>
-        <p>Structural Design For Art — ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
-      </div>
-      <nav class="footer-links" aria-label="Enlaces del sitio">
-        <p class="footer-col-title">Navegación</p>
-        <a href="./index.html">Inicio</a>
-        <a href="./privacidad.html">Política de privacidad</a>
-      </nav>
-      <div class="footer-links">
-        <p class="footer-col-title">Contacto</p>
-        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>
-        <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
-      </div>
+  <footer class="foot">
+    <div class="tile t-statement">
+      <p class="big">Ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
+      <p class="legal">© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</p>
     </div>
-    <div class="container footer-bottom">
-      <small>© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</small>
-    </div>
+    <nav class="tile t-nav" aria-label="Enlaces del sitio">
+      <a href="./index.html">Inicio</a>
+      <a href="./privacidad.html">Política de privacidad</a>
+      <a href="./terminos.html">Términos y condiciones</a>
+    </nav>
+    <a class="tile t-mail" href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
+    <a class="tile t-portal" href="https://pagos-sd-4-a.vercel.app/login">
+      <span>Ingreso al Portal</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11"/></svg>
+    </a>
   </footer>
+
+  <script src="./js/main.js" defer></script>
 </body>
 </html>

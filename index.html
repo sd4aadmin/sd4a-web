@@ -6,16 +6,15 @@
   <title>SD4A — Ingeniería Estructural | Structural Design For Art</title>
   <meta name="description" content="SD4A: diseño estructural para el arte de construir. Edificaciones, puentes, infraestructura, estructuras marítimas y BIM en Colombia." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-grotesk@400,500&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon-180.png" />
   <meta name="theme-color" content="#04343A" />
 
-  <!-- Open Graph / redes sociales -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SD4A Ingeniería Estructural" />
   <meta property="og:title" content="SD4A — Ingeniería Estructural | Structural Design For Art" />
@@ -31,116 +30,306 @@
   <meta name="twitter:image" content="https://sd4a-web.vercel.app/img/og-image.jpg" />
 
   <link rel="stylesheet" href="./css/style.css" />
+  <script>document.documentElement.className += " js";</script>
 </head>
 
 <body>
-  <!-- ══════════ TOPBAR ══════════ -->
-  <header class="topbar" id="topbar">
-    <div class="scroll-ruler" id="scrollRuler" aria-hidden="true"></div>
-    <div class="container topbar-inner">
-      <a class="brand" href="#inicio" aria-label="SD4A — inicio">
-        <img class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
-      </a>
+  <div class="cookiebar" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
+    <p>Usamos cookies esenciales para el funcionamiento del sitio. Al continuar navegando, aceptas nuestra <a href="./privacidad.html">Política de privacidad</a>.</p>
+    <button class="btn" id="cookieAccept" type="button">Aceptar</button>
+  </div>
 
-      <nav class="nav" id="nav" aria-label="Navegación principal">
-        <a href="#nosotros">Nosotros</a>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-
-      <a class="btn-portal" href="https://pagos-sd-4-a.vercel.app/login">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
-        Ingreso al Portal
-      </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <header class="bar" id="top">
+    <a class="brand" href="#inicio" aria-label="SD4A — inicio">
+      <img src="./img/logo-sd4a.png" width="100" height="34" alt="SD4A Ingeniería estructural" />
+    </a>
+    <nav class="nav" id="nav" aria-label="Navegación principal">
+      <a href="#obras">Obras</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn" href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal</a>
+    <button class="menu" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
   </header>
 
   <main>
-    <!-- ══════════ HERO ══════════ -->
+    <!-- ══════════ INICIO ══════════ -->
     <section id="inicio" class="hero">
-      <div class="hero-slides" aria-hidden="true">
-        <img src="./img/aeropuerto cartagena 1.webp" class="slide active" alt="" />
-        <img src="./img/POLIDEPORTIVO3.webp" class="slide" alt="" />
-        <img src="./img/puente rodano 1.webp" class="slide" alt="" />
-        <img src="./img/ARMADA DE SAN ANDRES.webp" class="slide" alt="" />
-      </div>
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-grid-lines" aria-hidden="true"></div>
+      <h1>Diseño estructural para el arte</h1>
+      <p class="lead">Edificaciones, puentes, infraestructura y obras marítimas en Colombia, del modelo BIM a la obra terminada.</p>
 
-      <div class="container hero-inner">
-        <p class="eyebrow light reveal">Structural Design For Art</p>
-        <h1 class="reveal">Diseño estructural<br />para el <span class="accent">arte</span></h1>
-        <p class="hero-sub reveal">
-          Fusionamos ingeniería y arquitectura para concebir estructuras hermosas,
-          sostenibles y seguras — del modelo BIM a la obra terminada.
-        </p>
-        <div class="hero-actions reveal">
-          <a class="btn btn-solid" href="#contacto">Solicitar cotización</a>
-          <a class="btn btn-ghost" href="#proyectos">Ver proyectos</a>
+      <div class="band">
+        <div class="col col-name">
+          <p class="strong">SD4A</p>
+          <p>Ingeniería estructural</p>
+          <p>Structural Design For Art</p>
         </div>
-      </div>
-
-      <div class="hero-dots" id="heroDots" aria-hidden="true"></div>
-
-      <div class="hero-strip" aria-hidden="true">
-        <div class="strip-track">
-          <span>EDIFICACIONES</span><i>·</i><span>PUENTES</span><i>·</i><span>INFRAESTRUCTURA</span><i>·</i><span>MARÍTIMO</span><i>·</i><span>HIDROCARBUROS</span><i>·</i><span>BIM</span><i>·</i><span>INTERVENTORÍA</span><i>·</i><span>EDIFICACIONES</span><i>·</i><span>PUENTES</span><i>·</i><span>INFRAESTRUCTURA</span><i>·</i><span>MARÍTIMO</span><i>·</i><span>HIDROCARBUROS</span><i>·</i><span>BIM</span><i>·</i><span>INTERVENTORÍA</span><i>·</i>
+        <div class="col col-hours">
+          <p>Atendemos de lunes a viernes, de 8:00 a.m. a 6:00 p.m.</p>
+        </div>
+        <div class="col col-list">
+          <p class="strong">Servicios</p>
+          <ul>
+            <li>Diseño estructural</li>
+            <li>Revisión y reforzamiento</li>
+            <li>BIM / Revit</li>
+          </ul>
+        </div>
+        <div class="col col-list">
+          <p class="strong">Sectores</p>
+          <ul>
+            <li>Edificaciones</li>
+            <li>Puentes</li>
+            <li>Infraestructura</li>
+            <li>Hidrocarburos</li>
+            <li>Marítimo</li>
+          </ul>
+        </div>
+        <div class="col col-actions">
+          <a class="btn" href="https://wa.me/573112228420?text=Hola%20SD4A%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer">Solicitar cotización</a>
+          <a class="textlink" href="#obras">Ver obras</a>
         </div>
       </div>
     </section>
 
-    <!-- ══════════ CIFRAS ══════════ -->
-    <div class="stats-strip container">
-      <div class="stat">
-        <span class="stat-num" data-count-source="#projectGrid .project">0</span>
-        <span class="stat-label">Proyectos en portafolio</span>
+    <!-- ══════════ OBRAS: la hoja de contactos ══════════ -->
+    <section id="obras" class="work">
+      <div class="rail">
+        <h2>Obras</h2>
+        <div class="filters" role="group" aria-label="Filtrar obras por sector" id="filterBar">
+          <button type="button" data-filter="all" aria-pressed="true">Todas</button>
+          <button type="button" data-filter="edificacion" aria-pressed="false">Edificaciones</button>
+          <button type="button" data-filter="puentes" aria-pressed="false">Puentes</button>
+          <button type="button" data-filter="infraestructura" aria-pressed="false">Infraestructura</button>
+          <button type="button" data-filter="maritimo" aria-pressed="false">Marítimo</button>
+          <button type="button" data-filter="hidrocarburos" aria-pressed="false">Hidrocarburos</button>
+        </div>
+        <p class="count" id="workCount" aria-live="polite"></p>
       </div>
-      <div class="stat">
-        <span class="stat-num" data-count-source="#experiencia .sector">0</span>
-        <span class="stat-label">Sectores de especialización</span>
+      <div class="sheet" id="sheet">
+<article class="run reveal" data-cat="infraestructura">
+  <div class="frames"><button class="frame" type="button" data-full="img/aeropuerto cartagena 1.webp" data-title="Aeropuerto de Cartagena"><img src="img/t/aeropuerto-cartagena-1.webp" width="338" height="190" alt="Cubierta metálica sobre carrotanques, Aeropuerto de Cartagena"></button><button class="frame" type="button" data-full="img/aeropuerto cartagena 2.webp" data-title="Aeropuerto de Cartagena"><img src="img/t/aeropuerto-cartagena-2.webp" width="338" height="190" alt="Vista aérea de las cubiertas metálicas, Aeropuerto de Cartagena"></button><button class="frame" type="button" data-full="img/aeropuerto cartagena 3.webp" data-title="Aeropuerto de Cartagena"><img src="img/t/aeropuerto-cartagena-3.webp" width="338" height="190" alt="Cubierta metálica junto a la torre, Aeropuerto de Cartagena"></button></div>
+  <p class="cap"><span>Aeropuerto de Cartagena</span><span>Infraestructura</span></p>
+</article>
+<article class="run reveal" data-cat="edificacion">
+  <div class="frames"><button class="frame" type="button" data-full="img/POLIDEPORTIVO 1.webp" data-title="Escenario deportivo Santa Ana — Valle del Cauca"><img src="img/t/polideportivo-1.webp" width="338" height="190" alt="Cubierta de estructura espacial del escenario deportivo Santa Ana"></button><button class="frame" type="button" data-full="img/POLIDEPORTIVO 2.webp" data-title="Escenario deportivo Santa Ana — Valle del Cauca"><img src="img/t/polideportivo-2.webp" width="338" height="190" alt="Estructura espacial sobre la cancha, escenario deportivo Santa Ana"></button><button class="frame" type="button" data-full="img/POLIDEPORTIVO3.webp" data-title="Escenario deportivo Santa Ana — Valle del Cauca"><img src="img/t/polideportivo3.webp" width="338" height="190" alt="Interior de la cubierta, escenario deportivo Santa Ana"></button><button class="frame" type="button" data-full="img/POLIDEPORTIVO 4.webp" data-title="Escenario deportivo Santa Ana — Valle del Cauca"><img src="img/t/polideportivo-4.webp" width="338" height="190" alt="Cubierta de acero con la ciudad al fondo, escenario deportivo Santa Ana" loading="lazy"></button><button class="frame" type="button" data-full="img/POLIDEPORTIVO 5.webp" data-title="Escenario deportivo Santa Ana — Valle del Cauca"><img src="img/t/polideportivo-5.webp" width="338" height="190" alt="Vista superior de la cubierta, escenario deportivo Santa Ana" loading="lazy"></button></div>
+  <p class="cap"><span>Escenario deportivo Santa Ana — Valle del Cauca</span><span>Edificaciones</span></p>
+</article>
+<article class="run reveal" data-cat="puentes">
+  <div class="frames"><button class="frame" type="button" data-full="img/puente rodano 1.webp" data-title="Puente Ródano"><img src="img/t/puente-rodano-1.webp" width="338" height="190" alt="Puente Ródano visto desde arriba sobre el río" loading="lazy"></button><button class="frame" type="button" data-full="img/puente rodano 2.webp" data-title="Puente Ródano"><img src="img/t/puente-rodano-2.webp" width="338" height="190" alt="Puente Ródano entre dos laderas" loading="lazy"></button><button class="frame" type="button" data-full="img/puente rodano 3.webp" data-title="Puente Ródano"><img src="img/t/puente-rodano-3.webp" width="338" height="190" alt="Tablero del Puente Ródano con vehículos" loading="lazy"></button><button class="frame" type="button" data-full="img/puente rodano4.webp" data-title="Puente Ródano"><img src="img/t/puente-rodano4.webp" width="338" height="190" alt="Puente Ródano visto de lado" loading="lazy"></button></div>
+  <p class="cap"><span>Puente Ródano</span><span>Puentes</span></p>
+</article>
+<article class="run reveal" data-cat="edificacion">
+  <div class="frames"><button class="frame" type="button" data-full="img/clinica procardio 1.webp" data-title="Clínica Procardio"><img src="img/t/clinica-procardio-1.webp" width="338" height="190" alt="Modelo de la estructura metálica de la Clínica Procardio" loading="lazy"></button><button class="frame" type="button" data-full="img/clinica procardio 2.webp" data-title="Clínica Procardio"><img src="img/t/clinica-procardio-2.webp" width="338" height="190" alt="Estructura metálica de la Clínica Procardio, vista lateral" loading="lazy"></button></div>
+  <p class="cap"><span>Clínica Procardio</span><span>Edificaciones</span></p>
+</article>
+<article class="run reveal" data-cat="hidrocarburos">
+  <div class="frames"><button class="frame" type="button" data-full="img/otsa1.webp" data-title="OTSA"><img src="img/t/otsa1.webp" width="338" height="190" alt="Cubierta metálica de una zona de carga junto a tanques, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa2.webp" data-title="OTSA"><img src="img/t/otsa2.webp" width="338" height="190" alt="Caseta y tanque de almacenamiento, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa3.webp" data-title="OTSA"><img src="img/t/otsa3.webp" width="338" height="190" alt="Zona de espera cubierta, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa4.webp" data-title="OTSA"><img src="img/t/otsa4.webp" width="338" height="190" alt="Cubierta metálica a lo largo de la vía, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa5.webp" data-title="OTSA"><img src="img/t/otsa5.webp" width="338" height="190" alt="Carrotanque bajo la cubierta metálica, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa6.webp" data-title="OTSA"><img src="img/t/otsa6.webp" width="338" height="190" alt="Cubierta metálica con carrotanques, OTSA" loading="lazy"></button><button class="frame" type="button" data-full="img/otsa7.webp" data-title="OTSA"><img src="img/t/otsa7.webp" width="338" height="190" alt="Cubierta metálica y escalera de acceso, OTSA" loading="lazy"></button></div>
+  <p class="cap"><span>OTSA</span><span>Hidrocarburos</span></p>
+</article>
+<article class="run reveal" data-cat="hidrocarburos">
+  <div class="frames"><button class="frame" type="button" data-full="img/tasa frente.webp" data-title="TASA"><img src="img/t/tasa-frente.webp" width="338" height="190" alt="Estación de carga con cubierta metálica y grúa, TASA" loading="lazy"></button><button class="frame" type="button" data-full="img/tasa atras.webp" data-title="TASA"><img src="img/t/tasa-atras.webp" width="338" height="190" alt="Estación de carga vista por detrás, TASA" loading="lazy"></button><button class="frame" type="button" data-full="img/tasa isometria.webp" data-title="TASA"><img src="img/t/tasa-isometria.webp" width="338" height="190" alt="Isometría de la escalera y la cubierta, TASA" loading="lazy"></button><button class="frame" type="button" data-full="img/tasa lateral.webp" data-title="TASA"><img src="img/t/tasa-lateral.webp" width="338" height="190" alt="Vista lateral de la estación de carga, TASA" loading="lazy"></button></div>
+  <p class="cap"><span>TASA</span><span>Hidrocarburos</span></p>
+</article>
+<article class="run reveal" data-cat="puentes">
+  <div class="frames"><button class="frame" type="button" data-full="img/yarumales frente.webp" data-title="Puente colgante Yarumales"><img src="img/t/yarumales-frente.webp" width="338" height="190" alt="Puente colgante Yarumales sobre el río" loading="lazy"></button><button class="frame" type="button" data-full="img/yarumales isometria.webp" data-title="Puente colgante Yarumales"><img src="img/t/yarumales-isometria.webp" width="338" height="190" alt="Isometría del puente colgante Yarumales" loading="lazy"></button><button class="frame" type="button" data-full="img/yarumales isometria (2).webp" data-title="Puente colgante Yarumales"><img src="img/t/yarumales-isometria-2.webp" width="338" height="190" alt="Torre y cables del puente colgante Yarumales" loading="lazy"></button></div>
+  <p class="cap"><span>Puente colgante Yarumales</span><span>Puentes</span></p>
+</article>
+<article class="run reveal" data-cat="maritimo">
+  <div class="frames"><button class="frame" type="button" data-full="img/ARMADA DE SAN ANDRES-1.webp" data-title="Armada Nacional — San Andrés"><img src="img/t/armada-de-san-andres-1.webp" width="254" height="190" alt="Edificación de la Armada Nacional en San Andrés" loading="lazy"></button><button class="frame" type="button" data-full="img/ARMADA DE SAN ANDRES.webp" data-title="Armada Nacional — San Andrés"><img src="img/t/armada-de-san-andres.webp" width="238" height="190" alt="Planos y modelo de la edificación de la Armada en San Andrés" loading="lazy"></button><button class="frame" type="button" data-full="img/ARMADA DE SAN ANDRES ARQUITECTURA PNA.webp" data-title="Armada Nacional — San Andrés"><img src="img/t/armada-de-san-andres-arquitectura-pna.webp" width="254" height="190" alt="Renders de la arquitectura de la Armada en San Andrés" loading="lazy"></button></div>
+  <p class="cap"><span>Armada Nacional — San Andrés</span><span>Marítimo</span></p>
+</article>
+<article class="run reveal" data-cat="maritimo">
+  <div class="frames"><button class="frame" type="button" data-full="img/FARO SAN ANDRES.webp" data-title="Faro — San Andrés"><img src="img/t/faro-san-andres.webp" width="262" height="190" alt="Faro de San Andrés rodeado por el mar" loading="lazy"></button><button class="frame" type="button" data-full="img/FARO-2.webp" data-title="Faro — San Andrés"><img src="img/t/faro-2.webp" width="254" height="190" alt="Cimentación del faro de San Andrés" loading="lazy"></button></div>
+  <p class="cap"><span>Faro — San Andrés</span><span>Marítimo</span></p>
+</article>
+<article class="run reveal" data-cat="hidrocarburos">
+  <div class="frames"><button class="frame" type="button" data-full="img/TANQUE PUMA BELIZE.webp" data-title="Tanque PUMA — Belize"><img src="img/t/tanque-puma-belize.webp" width="210" height="190" alt="Modelo del tanque y su cimentación en pilotes, PUMA Belize" loading="lazy"></button></div>
+  <p class="cap"><span>Tanque PUMA — Belize</span><span>Hidrocarburos</span></p>
+</article>
+<article class="run reveal" data-cat="puentes">
+  <div class="frames"><button class="frame" type="button" data-full="img/PUENTE VILLA RESTREPO.webp" data-title="Puente Villa Restrepo"><img src="img/t/puente-villa-restrepo.webp" width="501" height="190" alt="Vistas del modelo del Puente Villa Restrepo" loading="lazy"></button><button class="frame" type="button" data-full="img/PUENTE VILLA RESTREPO-2.webp" data-title="Puente Villa Restrepo"><img src="img/t/puente-villa-restrepo-2.webp" width="274" height="190" alt="Modelo del Puente Villa Restrepo sobre el terreno" loading="lazy"></button></div>
+  <p class="cap"><span>Puente Villa Restrepo</span><span>Puentes</span></p>
+</article>
+<article class="run reveal" data-cat="puentes">
+  <div class="frames"><button class="frame" type="button" data-full="img/PUENTE PICO DE ORO 2.webp" data-title="Puente Pico de Oro"><img src="img/t/puente-pico-de-oro-2.webp" width="327" height="190" alt="Modelo del Puente Pico de Oro sobre la ladera" loading="lazy"></button></div>
+  <p class="cap"><span>Puente Pico de Oro</span><span>Puentes</span></p>
+</article>
+<article class="run reveal" data-cat="puentes">
+  <div class="frames"><button class="frame" type="button" data-full="img/PATOLOGIA PUENTES-2.webp" data-title="Patología de puentes"><img src="img/t/patologia-puentes-2.webp" width="254" height="190" alt="Inspección de patología en un puente" loading="lazy"></button><button class="frame" type="button" data-full="img/PATOLOGIA PUENTES-3.webp" data-title="Patología de puentes"><img src="img/t/patologia-puentes-3.webp" width="254" height="190" alt="Malla de refuerzo en el tablero de un puente" loading="lazy"></button><button class="frame" type="button" data-full="img/PATOLOGIA PUENTES-1.webp" data-title="Patología de puentes"><img src="img/t/patologia-puentes-1.webp" width="248" height="190" alt="Mapa de esfuerzos del modelo de análisis de un puente" loading="lazy"></button></div>
+  <p class="cap"><span>Patología de puentes</span><span>Puentes</span></p>
+</article>
+<article class="run reveal" data-cat="infraestructura">
+  <div class="frames"><button class="frame" type="button" data-full="img/MURO DE CONTENCION SAN GIL.webp" data-title="Muro de contención — San Gil"><img src="img/t/muro-de-contencion-san-gil.webp" width="294" height="190" alt="Planta del muro de contención de San Gil" loading="lazy"></button></div>
+  <p class="cap"><span>Muro de contención — San Gil</span><span>Infraestructura</span></p>
+</article>
+<article class="run reveal" data-cat="infraestructura">
+  <div class="frames"><button class="frame" type="button" data-full="img/LA MESETA-1.webp" data-title="La Meseta"><img src="img/t/la-meseta-1.webp" width="322" height="190" alt="Modelo de la estructura La Meseta" loading="lazy"></button></div>
+  <p class="cap"><span>La Meseta</span><span>Infraestructura</span></p>
+</article>
       </div>
-      <div class="stat">
-        <span class="stat-num" data-count-source=".steps .step">0</span>
-        <span class="stat-label">Pasos de un proceso claro</span>
-      </div>
-    </div>
+    </section>
 
-    <!-- ══════════ NOSOTROS ══════════ -->
-    <section id="nosotros" class="section">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Nosotros</p>
-          <h2>La estructura también es arte</h2>
-          <p>
-            SD4A —Structural Design For Art— aborda la ingeniería como la aplicación
-            del arte a la construcción: soluciones estructurales innovadoras, funcionales
-            y con impacto visual positivo.
-          </p>
+    <!-- ══════════ SERVICIOS Y SECTORES: índice con vista previa ══════════ -->
+    <section id="servicios" class="features">
+      <h2>Servicios y sectores</h2>
+
+      <div class="index" id="index">
+        <div class="group g1" data-image="img/m/polideportivo-1.webp" data-alt="Cubierta de estructura espacial del escenario deportivo Santa Ana">
+          <h3>Diseño estructural</h3>
+          <ul>
+            <li tabindex="0" data-desc="Estructuras en concreto reforzado según el alcance del proyecto.">Concreto</li>
+            <li tabindex="0" data-desc="Estructuras metálicas según el alcance del proyecto.">Acero</li>
+            <li tabindex="0" data-desc="Concreto y acero combinados, según lo que pida el proyecto.">Soluciones mixtas</li>
+            <li tabindex="0" data-desc="Diseño conforme al Reglamento Colombiano de Construcción Sismo Resistente.">Cumplimiento NSR-10</li>
+          </ul>
+          <p class="sum">Concreto, acero y soluciones mixtas según el alcance del proyecto, cumpliendo NSR-10.</p>
         </div>
 
-        <div class="cards-3">
-          <article class="plan-card reveal">
+        <div class="group g2" data-image="img/m/patologia-puentes-2.webp" data-alt="Inspección de patología en un puente">
+          <h3>Revisión y reforzamiento</h3>
+          <ul>
+            <li tabindex="0" data-desc="Evaluamos el estado de la estructura existente.">Diagnóstico</li>
+            <li tabindex="0" data-desc="Identificamos el origen de los daños de la estructura.">Patología estructural</li>
+            <li tabindex="0" data-desc="Definimos cómo intervenir la estructura.">Propuesta de refuerzo</li>
+            <li tabindex="0" data-desc="Entregamos los documentos que la obra necesita para intervenir.">Documentación para intervención</li>
+          </ul>
+          <p class="sum">Diagnóstico, patología estructural, propuesta de refuerzo y documentación para intervención.</p>
+        </div>
+
+        <div class="group g3" data-image="img/m/yarumales-isometria.webp" data-alt="Isometría del puente colgante Yarumales">
+          <h3>BIM / Revit</h3>
+          <ul>
+            <li tabindex="0" data-desc="Modelamos, simulamos y analizamos cada proyecto en 3D antes de construir.">Modelado</li>
+            <li tabindex="0" data-desc="Detectamos interferencias temprano y coordinamos las disciplinas.">Coordinación entre disciplinas</li>
+            <li tabindex="0" data-desc="Extraemos los planos directamente del modelo.">Planos</li>
+            <li tabindex="0" data-desc="Extraemos las cantidades directamente del modelo.">Cantidades</li>
+          </ul>
+          <p class="sum">Modelado, coordinación entre disciplinas y extracción de planos y cantidades.</p>
+        </div>
+
+        <div class="group sectors">
+          <h3>Sectores donde trabajamos</h3>
+          <ul>
+            <li tabindex="0" data-image="img/m/polideportivo-1.webp" data-alt="Cubierta de estructura espacial del escenario deportivo Santa Ana" data-desc="Diseño y supervisión en concreto y acero: residencial, comercial e institucional.">Edificaciones</li>
+            <li tabindex="0" data-image="img/m/puente-rodano-2.webp" data-alt="Puente Ródano entre dos laderas" data-desc="Puentes vehiculares y peatonales de distintas luces y complejidades.">Puentes</li>
+            <li tabindex="0" data-image="img/m/aeropuerto-cartagena-1.webp" data-alt="Cubierta metálica sobre carrotanques, Aeropuerto de Cartagena" data-desc="Obras viales e infraestructura asociada.">Infraestructura</li>
+            <li tabindex="0" data-image="img/m/otsa2.webp" data-alt="Caseta y tanque de almacenamiento, OTSA" data-desc="Estructuras para petróleo y gas con foco en seguridad y eficiencia.">Hidrocarburos</li>
+            <li tabindex="0" data-image="img/m/faro-2.webp" data-alt="Cimentación del faro de San Andrés" data-desc="Puertos, muelles y plataformas.">Marítimo</li>
+            <li tabindex="0" data-image="img/m/muro-de-contencion-san-gil.webp" data-alt="Planta del muro de contención de San Gil" data-desc="Interventoría de diseños y de obra para asegurar calidad y seguridad.">Interventoría</li>
+          </ul>
+        </div>
+
+        <aside class="preview" aria-live="polite">
+          <img id="previewImg" src="img/m/polideportivo-1.webp" width="960" height="720" alt="Cubierta de estructura espacial del escenario deportivo Santa Ana" loading="lazy" />
+          <p id="previewText">Pasa el cursor, o enfoca con el teclado, cualquier servicio o sector.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ══════════ ENFOQUE BIM: una imagen cortada en baldosas ══════════ -->
+    <section id="bim" class="showcase" aria-labelledby="bimTitle">
+      <div class="board board-d" style="--img: url('/img/m/mosaico-procardio.webp')">
+<div class="tile flat heading"><h2>Enfoque BIM</h2></div>
+<div class="tile pic" style="--r:0;--c:1" aria-hidden="true"></div>
+<div class="tile pic" style="--r:0;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:0;--c:3" aria-hidden="true"></div>
+<div class="tile pic" style="--r:0;--c:4" aria-hidden="true"></div>
+<div class="tile pic" style="--r:0;--c:5" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:0" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:1" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:2" aria-hidden="true"></div>
+<div class="tile flat fact"><p>Detectamos interferencias temprano.</p></div>
+<div class="tile pic" style="--r:1;--c:4" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:5" aria-hidden="true"></div>
+<div class="tile pic" style="--r:2;--c:0" aria-hidden="true"></div>
+<div class="tile flat fact"><p>Coordinamos disciplinas.</p></div>
+<div class="tile pic" style="--r:2;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:2;--c:3" aria-hidden="true"></div>
+<div class="tile pic" style="--r:2;--c:4" aria-hidden="true"></div>
+<div class="tile flat action"><a href="#contacto">Hablemos de tu modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+<div class="tile pic" style="--r:3;--c:0" aria-hidden="true"></div>
+<div class="tile pic" style="--r:3;--c:1" aria-hidden="true"></div>
+<div class="tile pic" style="--r:3;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:3;--c:3" aria-hidden="true"></div>
+<div class="tile flat fact"><p>Entregamos información confiable para la obra.</p></div>
+<div class="tile pic" style="--r:3;--c:5" aria-hidden="true"></div>
+      </div>
+      <div class="board board-m" style="--img: url('/img/m/mosaico-procardio.webp')">
+<div class="tile flat heading" style="grid-column: span 2"><h2>Enfoque BIM</h2></div>
+<div class="tile pic" style="--r:0;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:0" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:1" aria-hidden="true"></div>
+<div class="tile pic" style="--r:1;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:2;--c:0" aria-hidden="true"></div>
+<div class="tile flat fact" style="grid-column: span 2"><p>Detectamos interferencias temprano.</p></div>
+<div class="tile flat fact" style="grid-column: span 2"><p>Coordinamos disciplinas.</p></div>
+<div class="tile pic" style="--r:3;--c:2" aria-hidden="true"></div>
+<div class="tile pic" style="--r:4;--c:0" aria-hidden="true"></div>
+<div class="tile flat fact" style="grid-column: span 2"><p>Entregamos información confiable para la obra.</p></div>
+<div class="tile pic" style="--r:5;--c:0" aria-hidden="true"></div>
+<div class="tile flat action" style="grid-column: span 2"><a href="#contacto">Hablemos de tu modelo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <p class="note" id="bimTitle">Modelo estructural de la Clínica Procardio. Modelamos cada proyecto en 3D antes de construir.</p>
+    </section>
+
+    <!-- ══════════ PROCESO: fila de momentos ══════════ -->
+    <section id="proceso" class="process">
+      <div class="head">
+        <h2>Así trabajamos</h2>
+        <div class="arrows">
+          <button type="button" id="prevMoment" aria-label="Paso anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
+          <button type="button" id="nextMoment" aria-label="Paso siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+      <ol class="moments" id="moments">
+        <li class="moment" style="--gap: 96px">
+          <h3>Primero, recolectamos</h3>
+          <p>Arquitectura, DWG, alcance, normativa y plazos del proyecto.</p>
+          <img src="img/p/proceso-1.webp" width="560" height="700" alt="Edificación de la Armada Nacional en San Andrés, durante una obra" loading="lazy" />
+        </li>
+        <li class="moment" style="--gap: 40px">
+          <h3>Después, modelamos y calculamos</h3>
+          <p>Modelos estructurales, hipótesis de carga y dimensionamiento.</p>
+          <img src="img/p/proceso-2.webp" width="560" height="700" alt="Mapa de esfuerzos de un modelo de análisis" loading="lazy" />
+        </li>
+        <li class="moment" style="--gap: 128px">
+          <h3>Luego, planos y entrega</h3>
+          <p>Planos, detalles constructivos y soporte durante la obra.</p>
+          <img src="img/p/proceso-3.webp" width="560" height="700" alt="Planta arquitectónica de una edificación" loading="lazy" />
+        </li>
+        <li class="moment" style="--gap: 64px">
+          <h3>Todo el tiempo, seguimiento en el portal</h3>
+          <p>Avance, archivos y pagos del proyecto, todo en un solo lugar.</p>
+          <img src="img/p/proceso-4.webp" width="560" height="700" alt="Puente colgante Yarumales en modelo isométrico" loading="lazy" />
+          <a class="textlink" href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal</a>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ══════════ NOSOTROS ══════════ -->
+    <section id="nosotros" class="about">
+      <h2>Nosotros</h2>
+      <div class="facts">
+        <p><span>Lugar</span>Colombia</p>
+        <p><span>Horario</span>Lunes a viernes, 8:00 a.m. a 6:00 p.m.</p>
+        <p><span>Contacto</span><a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a></p>
+      </div>
+      <div class="text">
+        <p class="statement"><img class="dropcap" src="img/p/nosotros.webp" width="360" height="360" alt="Cubierta de estructura espacial de un escenario deportivo" loading="lazy" /><strong>SD4A —Structural Design For Art—</strong> aborda la ingeniería como la aplicación del arte a la construcción: soluciones estructurales innovadoras, funcionales y con impacto visual positivo.</p>
+        <div class="trio">
+          <div>
             <h3>Misión</h3>
-            <p>
-              Proporcionar soluciones de ingeniería estructural de alta calidad que mejoren
-              la vida de las personas. Implementamos soluciones innovadoras y sostenibles con
-              altos estándares de seguridad y eficiencia, dentro del presupuesto y del plazo.
-            </p>
-          </article>
-          <article class="plan-card reveal">
+            <p>Proporcionar soluciones de ingeniería estructural de alta calidad que mejoren la vida de las personas. Implementamos soluciones innovadoras y sostenibles con altos estándares de seguridad y eficiencia, dentro del presupuesto y del plazo.</p>
+          </div>
+          <div>
             <h3>Visión</h3>
-            <p>
-              Liderar la industria de la ingeniería estructural ofreciendo soluciones
-              innovadoras, sostenibles y seguras para los desafíos del futuro.
-            </p>
-          </article>
-          <article class="plan-card reveal">
+            <p>Liderar la industria de la ingeniería estructural ofreciendo soluciones innovadoras, sostenibles y seguras para los desafíos del futuro.</p>
+          </div>
+          <div>
             <h3>Valores</h3>
             <ul>
               <li><strong>Compromiso</strong> — calidad y eficiencia en cada entrega.</li>
@@ -149,315 +338,69 @@
               <li><strong>Creatividad</strong> — soluciones originales.</li>
               <li><strong>Excelencia</strong> — mejora continua.</li>
             </ul>
-          </article>
-        </div>
-
-        <div class="bim-band reveal">
-          <div class="bim-copy">
-            <p class="eyebrow light">Metodología</p>
-            <h3>Enfoque BIM</h3>
-            <p>
-              Modelamos, simulamos y analizamos cada proyecto en 3D antes de construir.
-              Detectamos interferencias temprano, coordinamos disciplinas y entregamos
-              información confiable para la obra.
-            </p>
           </div>
-          <img src="./img/MODELO DE ANÁLISIS PLATAFORMAS PROYECTO 10K.webp" alt="Modelo de análisis estructural BIM" />
         </div>
-      </div>
-    </section>
-
-    <!-- ══════════ EXPERIENCIA ══════════ -->
-    <section id="experiencia" class="section dark">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Experiencia</p>
-          <h2>Sectores donde trabajamos</h2>
-          <p>Equipo capacitado y experimentado, con enfoque en seguridad, sostenibilidad y coordinación integral.</p>
-        </div>
-
-        <div class="sector-grid">
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6M9 12h.01M15 12h.01M9 8h.01M15 8h.01"/></svg>
-            <h3>Edificaciones</h3><p>Diseño y supervisión en concreto y acero: residencial, comercial e institucional.</p>
-          </article>
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 20h20M4 20v-6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v6M10 20v-9a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v9M16 20v-6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v6M2 12l20-4"/></svg>
-            <h3>Puentes</h3><p>Puentes vehiculares y peatonales de distintas luces y complejidades.</p>
-          </article>
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M6 6l12 12M18 6 6 18"/></svg>
-            <h3>Infraestructura</h3><p>Obras viales e infraestructura asociada.</p>
-          </article>
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6M9 6h6M6 9h12l1 5H5l1-5Z"/><path d="M4 21h16M6 21v-7M18 21v-7M9 21v-4h6v4"/></svg>
-            <h3>Hidrocarburos</h3><p>Estructuras para petróleo y gas con foco en seguridad y eficiencia.</p>
-          </article>
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18c1.5 1.3 3 1.3 4.5 0s3-1.3 4.5 0 3 1.3 4.5 0 3-1.3 4.5 0M5 18V9l4-2v5M12 18v-9l4-3v8"/></svg>
-            <h3>Marítimo</h3><p>Puertos, muelles y plataformas.</p>
-          </article>
-          <article class="sector reveal">
-            <svg class="sector-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-            <h3>Interventoría</h3><p>Interventoría de diseños y de obra para asegurar calidad y seguridad.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ SERVICIOS ══════════ -->
-    <section id="servicios" class="section">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Servicios</p>
-          <h2>Lo que hacemos por tu proyecto</h2>
-        </div>
-
-        <div class="cards-3">
-          <article class="plan-card service reveal">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16l4-6 3 4 4-7"/></svg>
-            <h3>Diseño estructural</h3>
-            <p>Concreto, acero y soluciones mixtas según el alcance del proyecto, cumpliendo NSR-10.</p>
-            <a class="link" href="#contacto">Cotizar →</a>
-          </article>
-          <article class="plan-card service reveal">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v3l2 2"/></svg>
-            <h3>Revisión y reforzamiento</h3>
-            <p>Diagnóstico, patología estructural, propuesta de refuerzo y documentación para intervención.</p>
-            <a class="link" href="#contacto">Consultar →</a>
-          </article>
-          <article class="plan-card service reveal">
-            <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5Z"/><path d="M3 7l9 5 9-5M12 12v9"/></svg>
-            <h3>BIM / Revit</h3>
-            <p>Modelado, coordinación entre disciplinas y extracción de planos y cantidades.</p>
-            <a class="link" href="#contacto">Hablar →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ PROYECTOS ══════════ -->
-    <section id="proyectos" class="section alt">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Proyectos</p>
-          <h2>Obras que hablan por nosotros</h2>
-          <p>Haz clic en cualquier proyecto para verlo en grande.</p>
-        </div>
-
-        <div class="filter-bar reveal" id="filterBar" role="group" aria-label="Filtrar proyectos por categoría">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="edificacion">Edificación</button>
-          <button class="filter-btn" data-filter="puentes">Puentes</button>
-          <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
-          <button class="filter-btn" data-filter="maritimo">Marítimo</button>
-          <button class="filter-btn" data-filter="hidrocarburos">Hidrocarburos</button>
-        </div>
-
-        <div class="project-grid" id="projectGrid">
-          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
-                        <div class="project-media">
-<img src="./img/aeropuerto cartagena 2.webp" alt="Aeropuerto de Cartagena" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Infraestructura</span><strong>Aeropuerto de Cartagena</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="edificacion">
-                        <div class="project-media">
-<img src="./img/POLIDEPORTIVO 1.webp" alt="Escenario deportivo Santa Ana" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Edificación</span><strong>Escenario Deportivo Santa Ana — Valle del Cauca</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="puentes">
-                        <div class="project-media">
-<img src="./img/puente rodano 2.webp" alt="Puente Ródano" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Puentes</span><strong>Puente Ródano</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="maritimo">
-                        <div class="project-media">
-<img src="./img/ARMADA DE SAN ANDRES.webp" alt="Estructura Armada de San Andrés" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Marítimo</span><strong>Armada Nacional — San Andrés</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="hidrocarburos">
-                        <div class="project-media">
-<img src="./img/TANQUE PUMA BELIZE.webp" alt="Tanque Puma Belize" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Hidrocarburos</span><strong>Tanque PUMA — Belize</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="edificacion">
-                        <div class="project-media">
-<img src="./img/clinica procardio 1.webp" alt="Clínica Procardio" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Edificación</span><strong>Clínica Procardio</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="puentes">
-                        <div class="project-media">
-<img src="./img/PUENTE VILLA RESTREPO.webp" alt="Puente Villa Restrepo" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Puentes</span><strong>Puente Villa Restrepo</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
-                        <div class="project-media">
-<img src="./img/MURO DE CONTENCION SAN GIL.webp" alt="Muro de contención San Gil" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Infraestructura</span><strong>Muro de Contención — San Gil</strong></figcaption>
-          </figure>
-          <figure class="project reveal" tabindex="0" data-cat="maritimo">
-                        <div class="project-media">
-<img src="./img/FARO SAN ANDRES.webp" alt="Faro San Andrés" loading="lazy" />
-            <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
-            </div>
-            <figcaption><span class="tag">Marítimo</span><strong>Faro — San Andrés</strong></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════ PROCESO ══════════ -->
-    <section id="proceso" class="section">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Proceso</p>
-          <h2>Así trabajamos, sin sorpresas</h2>
-        </div>
-
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num">01</span>
-            <h3>Recolección</h3>
-            <p>Arquitectura, DWG, alcance, normativa y plazos del proyecto.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">02</span>
-            <h3>Modelado y cálculo</h3>
-            <p>Modelos estructurales, hipótesis de carga y dimensionamiento.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">03</span>
-            <h3>Planos y entrega</h3>
-            <p>Planos, detalles constructivos y soporte durante la obra.</p>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">04</span>
-            <h3>Seguimiento en el portal</h3>
-            <p>Avance, archivos y pagos del proyecto, todo en un solo lugar.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ══════════ CTA PORTAL ══════════ -->
-    <section class="cta">
-      <div class="container cta-inner reveal">
-        <div>
-          <p class="eyebrow light">Clientes SD4A</p>
-          <h2>Tu proyecto, en línea y al día</h2>
-          <p>Consulta el avance, previsualiza entregables y paga en línea desde el Portal SD4A.</p>
-        </div>
-        <a class="btn btn-mint" href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal →</a>
       </div>
     </section>
 
     <!-- ══════════ CONTACTO ══════════ -->
-    <section id="contacto" class="section">
-      <div class="container">
-        <div class="sheet-head reveal">
-          <p class="eyebrow">Contacto</p>
-          <h2>Hablemos de tu proyecto</h2>
-        </div>
-
-        <div class="contact-solo">
-          <aside class="plan-card contact-info reveal">
-            <h3>Canales directos</h3>
-
-            <a class="wa-btn" href="https://wa.me/573112228420?text=Hola%20SD4A%2C%20quiero%20cotizar%20un%20proyecto" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-              Escríbenos por WhatsApp
-            </a>
-
-            <div class="info-row"><span class="info-label">WhatsApp</span><a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a></div>
-            <div class="info-row"><span class="info-label">Email</span><a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a></div>
-            <div class="info-row"><span class="info-label">Ubicación</span><span>Colombia</span></div>
-            <div class="info-row"><span class="info-label">Horario</span><span>Lun–Vie · 8:00 a.m. – 6:00 p.m.</span></div>
-
-            <div class="portal-note">
-              <p>¿Ya eres cliente?</p>
-              <a class="btn btn-solid btn-small" href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal</a>
-            </div>
-          </aside>
-        </div>
+    <section id="contacto" class="contact">
+      <div class="marquee" aria-hidden="true">
+        <div class="track"><img src="img/t/otsa5.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/puente-rodano-3.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/polideportivo-4.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/aeropuerto-cartagena-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/yarumales-frente.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/clinica-procardio-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/tasa-isometria.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/faro-san-andres.webp" width="207" height="150" alt="" loading="lazy"><img src="img/t/puente-rodano-1.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/otsa2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/polideportivo-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/yarumales-isometria.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/aeropuerto-cartagena-1.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/tasa-frente.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/otsa5.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/puente-rodano-3.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/polideportivo-4.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/aeropuerto-cartagena-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/yarumales-frente.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/clinica-procardio-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/tasa-isometria.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/faro-san-andres.webp" width="207" height="150" alt="" loading="lazy"><img src="img/t/puente-rodano-1.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/otsa2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/polideportivo-2.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/yarumales-isometria.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/aeropuerto-cartagena-1.webp" width="267" height="150" alt="" loading="lazy"><img src="img/t/tasa-frente.webp" width="267" height="150" alt="" loading="lazy"></div>
+      </div>
+      <h2>Hablemos de tu proyecto</h2>
+      <form class="bar3" id="waForm" action="https://wa.me/573112228420" method="get" target="_blank">
+        <label class="cell"><span class="sr">Tu nombre</span><input type="text" id="waName" name="nombre" placeholder="Tu nombre" autocomplete="name" /></label>
+        <label class="cell"><span class="sr">Tu proyecto en una línea</span><input type="text" id="waMsg" name="proyecto" placeholder="Tu proyecto en una línea" /></label>
+        <button class="cell go" type="submit">Enviar por WhatsApp</button>
+      </form>
+      <div class="small">
+        <p>Se abre WhatsApp con tu mensaje listo para enviar; lo que escribes aquí no se guarda. <a href="./privacidad.html">Política de privacidad</a>.</p>
+        <p>También puedes escribir a <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a> o directamente al <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>. Atendemos de lunes a viernes, de 8:00 a.m. a 6:00 p.m.</p>
       </div>
     </section>
   </main>
 
-  <!-- ══════════ FOOTER ══════════ -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="brand-text small">SD<em>4</em>A</span>
-        <p>Structural Design For Art — ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
-      </div>
-
-      <nav class="footer-links" aria-label="Enlaces del sitio">
-        <p class="footer-col-title">Navegación</p>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-
-      <div class="footer-links">
-        <p class="footer-col-title">Contacto</p>
-        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>
-        <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
-        <a href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal →</a>
-      </div>
+  <!-- ══════════ PIE: baldosas ══════════ -->
+  <footer class="foot">
+    <div class="tile t-statement">
+      <p class="big">Ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
+      <p class="legal">© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</p>
     </div>
-
-    <div class="container footer-bottom">
-      <small>© 2026 SD4A Ingeniería Estructural. Todos los derechos reservados.</small>
-      <div class="footer-legal">
-        <a href="./privacidad.html">Política de privacidad</a>
-        <span aria-hidden="true">·</span>
-        <a href="./terminos.html">Términos y condiciones</a>
-      </div>
+    <nav class="tile t-nav" aria-label="Enlaces del sitio">
+      <a href="#obras">Obras</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+      <a href="./privacidad.html">Política de privacidad</a>
+      <a href="./terminos.html">Términos y condiciones</a>
+    </nav>
+    <div class="tile t-time">
+      <p>Colombia</p>
+      <p><time id="clock" datetime="">Hora local</time></p>
     </div>
+    <a class="tile t-mail" href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
+    <div class="tile t-word" aria-hidden="true">SD4A</div>
+    <a class="tile t-portal" href="https://pagos-sd-4-a.vercel.app/login">
+      <span>Ingreso al Portal</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19L19 5M8 5h11v11"/></svg>
+    </a>
   </footer>
 
-  <!-- ══════════ LIGHTBOX ══════════ -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista de proyecto" hidden>
-    <button class="lb-close" id="lbClose" aria-label="Cerrar">×</button>
-    <button class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+  <!-- ══════════ VISOR ══════════ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Vista ampliada de la obra" hidden>
+    <button class="lb-close" id="lbClose" type="button" aria-label="Cerrar">Cerrar</button>
+    <button class="lb-prev" id="lbPrev" type="button" aria-label="Anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12H4M10 6l-6 6 6 6"/></svg></button>
     <figure class="lb-figure">
       <img id="lbImg" src="" alt="" />
       <figcaption id="lbCaption"></figcaption>
     </figure>
-    <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
+    <button class="lb-next" id="lbNext" type="button" aria-label="Siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
   </div>
 
-  <!-- ══════════ VOLVER ARRIBA ══════════ -->
-  <button class="back-to-top" id="backToTop" aria-label="Volver arriba">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-  </button>
+  <button class="totop" id="backToTop" type="button" aria-label="Volver arriba"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-  <!-- ══════════ AVISO DE COOKIES ══════════ -->
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
-    <p>
-      Usamos cookies esenciales para el funcionamiento del sitio. Al continuar navegando, aceptas nuestra
-      <a href="./privacidad.html">Política de privacidad</a>.
-    </p>
-    <button class="btn btn-solid btn-small" id="cookieAccept">Aceptar</button>
-  </div>
-
-  <script src="./js/main.js"></script>
+  <script src="./js/main.js" defer></script>
 </body>
 </html>
