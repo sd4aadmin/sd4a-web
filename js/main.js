@@ -167,6 +167,10 @@
   if (clock) { tick(); setInterval(tick, 30000); }
 
   /* ── Aparecer al desplazarse ── */
+  $$(".band .col, .group, .tile, .moment, .trio > div, .facts p, .statement").forEach(function (el, i) {
+    el.classList.add("reveal");
+    el.style.setProperty("--i", String(i % 6));
+  });
   var rev = $$(".reveal");
   if ("IntersectionObserver" in window && !reduce) {
     var io = new IntersectionObserver(function (es) {
@@ -174,6 +178,10 @@
     }, { rootMargin: "0px 0px -8% 0px" });
     rev.forEach(function (r) { io.observe(r); });
   } else rev.forEach(function (r) { r.classList.add("in"); });
+
+  /* ── Cabecera con sombra al desplazarse ── */
+  var hdr = $(".bar");
+  if (hdr) window.addEventListener("scroll", function () { hdr.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
 
   /* ── Volver arriba ── */
   var top = $("#backToTop");

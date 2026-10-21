@@ -334,3 +334,98 @@ h3 { font-size: var(--s-lead); line-height: 1.2; font-weight: 500; }
 }
 
 .legal .stamp { background: var(--mint); padding: 14px 16px; font-weight: 500; }
+
+/* ══ Capa de profundidad: degradados de marca, sombras suaves y más movimiento ══ */
+:root {
+  --teal-soft: #68B2B7;
+  --r: 14px;
+  --sh-1: 0 1px 2px rgba(4, 52, 58, .06), 0 4px 12px rgba(4, 52, 58, .07);
+  --sh-2: 0 2px 4px rgba(4, 52, 58, .08), 0 14px 32px rgba(4, 52, 58, .16);
+  --grad-brand: linear-gradient(135deg, #0A7881 0%, #04343A 100%);
+  --grad-mint: linear-gradient(135deg, #9BE3BF 0%, #68B2B7 100%);
+}
+body { background: linear-gradient(180deg, #F4FAF9 0%, #E9F5F2 60%, #F4FAF9 100%); background-attachment: fixed; }
+
+.bar { transition: box-shadow .25s var(--ease), background-color .25s var(--ease); }
+.bar.scrolled { background: rgba(244, 250, 249, .92); backdrop-filter: blur(10px); box-shadow: 0 6px 24px rgba(4, 52, 58, .1); }
+.btn, .cell.go, .filters button, .arrows button, .totop, .menu, .lightbox button, .cookiebar .btn { border-radius: 10px; }
+.btn { background: var(--grad-brand); box-shadow: 0 4px 14px rgba(10, 120, 129, .3); }
+.btn:hover { background: var(--grad-brand); transform: translateY(-2px); box-shadow: 0 8px 22px rgba(10, 120, 129, .4); }
+.btn:active { transform: scale(.97); }
+.cookiebar .btn { background: var(--grad-mint); box-shadow: none; }
+
+/* Inicio */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: ""; position: absolute; right: -8%; top: -12%; width: min(52vw, 640px); aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(155, 227, 191, .75), rgba(104, 178, 183, .35) 55%, transparent 72%);
+  animation: floaty 14s ease-in-out infinite; pointer-events: none; z-index: 0;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero h1 { background: linear-gradient(120deg, #04343A 30%, #0A7881 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; padding-bottom: .08em; }
+@keyframes floaty { 50% { transform: translate(-4%, 6%) scale(1.06); } }
+.js .hero h1, .js .hero .lead { animation: rise .9s var(--ease) both; }
+.js .hero .lead { animation-delay: .12s; }
+@keyframes rise { from { opacity: 0; transform: translateY(24px); } }
+.band .col { border-radius: var(--r); background: #fff; box-shadow: var(--sh-1); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.band .col:hover { transform: translateY(-4px); box-shadow: var(--sh-2); }
+.band .col-actions { background: var(--grad-mint); }
+
+/* Obras */
+.filters button { background: #fff; box-shadow: var(--sh-1); }
+.filters button:hover { background: var(--mint); transform: translateX(3px); }
+.filters button[aria-pressed="true"] { background: var(--grad-brand); }
+.frame { border-radius: 12px; box-shadow: var(--sh-1); transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+.frames .frame:hover, .frames .frame:focus-visible { transform: translateY(-5px) scale(1.02); box-shadow: var(--sh-2); z-index: 2; position: relative; }
+.frames .frame:hover img { transform: none; }
+
+/* Servicios */
+.group li { border-radius: 10px; background: #fff; box-shadow: var(--sh-1); transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease), box-shadow .25s var(--ease); }
+.group li:hover, .group li:focus-visible, .group li.on { background: var(--grad-brand); transform: translateY(-2px); box-shadow: var(--sh-2); }
+.preview img { border-radius: 18px; box-shadow: var(--sh-2); }
+
+/* Mosaico BIM */
+.tile { border-radius: var(--r); }
+.board-d .tile.pic, .board-m .tile.pic { box-shadow: var(--sh-1); }
+.tile.heading { background: var(--grad-brand); }
+.tile.fact { background: #fff; box-shadow: var(--sh-1); }
+.tile.action { background: var(--grad-brand); }
+
+/* Proceso */
+.progress { border-radius: 8px; overflow: hidden; }
+.progress span { background: var(--grad-brand); border-radius: 8px; }
+.moment img { border-radius: 18px; box-shadow: var(--sh-2); }
+
+/* Nosotros */
+.facts p, .trio > div { background: #fff; border-radius: var(--r); box-shadow: var(--sh-1); }
+.trio > div { transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.trio > div:hover { transform: translateY(-4px); box-shadow: var(--sh-2); }
+.statement .dropcap { border-radius: 18px; box-shadow: var(--sh-2); }
+
+/* Contacto */
+.contact { background: var(--grad-brand); position: relative; overflow: hidden; }
+.contact::after { content: ""; position: absolute; right: -10%; bottom: -30%; width: 55vw; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(155, 227, 191, .28), transparent 65%); pointer-events: none; animation: floaty 16s ease-in-out infinite reverse; }
+.contact > * { position: relative; z-index: 1; }
+.track img { border-radius: 10px; }
+.cell { border-radius: 12px; box-shadow: 0 6px 20px rgba(0, 0, 0, .18); }
+.cell.go { background: var(--grad-mint); color: var(--ink); }
+.cell.go:hover { background: #fff; }
+
+/* Pie */
+.tile { box-shadow: var(--sh-1); }
+.t-statement, .t-nav, .t-time, .t-mail { background: #fff; }
+.t-word { background: var(--grad-brand); }
+.t-portal { background: var(--grad-mint); color: var(--ink); }
+.t-portal:hover { background: var(--grad-brand); color: var(--paper); transform: translateY(-3px); box-shadow: var(--sh-2); }
+.t-portal, .t-mail { transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease), color .3s var(--ease); }
+.legal .toc a, .legal .stamp, .legal-note { border-radius: var(--r); }
+
+/* Entrada escalonada */
+.js .reveal { transition-delay: calc(var(--i, 0) * 70ms); }
+.js .reveal { transform: translateY(26px) scale(.985); }
+.js .reveal.in { transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before, .contact::after { animation: none; }
+  .js .hero h1, .js .hero .lead { animation: none; }
+}
