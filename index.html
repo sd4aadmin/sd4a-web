@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
+  <script>document.documentElement.className += " js";</script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>SD4A — Ingeniería Estructural | Structural Design For Art</title>
   <meta name="description" content="SD4A: diseño estructural para el arte de construir. Edificaciones, puentes, infraestructura, estructuras marítimas y BIM en Colombia." />
@@ -9,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
   <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16.png" />
@@ -34,12 +38,13 @@
 </head>
 
 <body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <!-- ══════════ TOPBAR ══════════ -->
   <header class="topbar" id="topbar">
     <div class="scroll-ruler" id="scrollRuler" aria-hidden="true"></div>
     <div class="container topbar-inner">
       <a class="brand" href="#inicio" aria-label="SD4A — inicio">
-        <img class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
+        <img width="1250" height="424" class="brand-logo" src="./img/logo-sd4a.png" alt="SD4A Ingeniería Estructural" />
       </a>
 
       <nav class="nav" id="nav" aria-label="Navegación principal">
@@ -61,14 +66,14 @@
     </div>
   </header>
 
-  <main>
+  <main id="contenido">
     <!-- ══════════ HERO ══════════ -->
     <section id="inicio" class="hero">
       <div class="hero-slides" aria-hidden="true">
-        <img src="./img/aeropuerto cartagena 1.webp" class="slide active" alt="" />
-        <img src="./img/POLIDEPORTIVO3.webp" class="slide" alt="" />
-        <img src="./img/puente rodano 1.webp" class="slide" alt="" />
-        <img src="./img/ARMADA DE SAN ANDRES.webp" class="slide" alt="" />
+        <img width="1920" height="1080" src="./img/aeropuerto cartagena 1.webp" class="slide active" alt="" fetchpriority="high" decoding="async" />
+        <img width="1920" height="1080" src="./img/POLIDEPORTIVO3.webp" class="slide" alt="" loading="lazy" decoding="async" />
+        <img width="1920" height="1080" src="./img/puente rodano 1.webp" class="slide" alt="" loading="lazy" decoding="async" />
+        <img width="1011" height="806" src="./img/ARMADA DE SAN ANDRES.webp" class="slide" alt="" loading="lazy" decoding="async" />
       </div>
       <div class="hero-veil" aria-hidden="true"></div>
       <div class="hero-grid-lines" aria-hidden="true"></div>
@@ -86,7 +91,7 @@
         </div>
       </div>
 
-      <div class="hero-dots" id="heroDots" aria-hidden="true"></div>
+      <div class="hero-dots" id="heroDots" role="group" aria-label="Imágenes del encabezado"></div>
 
       <div class="hero-strip" aria-hidden="true">
         <div class="strip-track">
@@ -98,15 +103,15 @@
     <!-- ══════════ CIFRAS ══════════ -->
     <div class="stats-strip container">
       <div class="stat">
-        <span class="stat-num" data-count-source="#projectGrid .project">0</span>
+        <span class="stat-num" data-count-source="#projectGrid .project">9</span>
         <span class="stat-label">Proyectos en portafolio</span>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count-source="#experiencia .sector">0</span>
+        <span class="stat-num" data-count-source="#experiencia .sector">6</span>
         <span class="stat-label">Sectores de especialización</span>
       </div>
       <div class="stat">
-        <span class="stat-num" data-count-source=".steps .step">0</span>
+        <span class="stat-num" data-count-source=".steps .step">4</span>
         <span class="stat-label">Pasos de un proceso claro</span>
       </div>
     </div>
@@ -162,7 +167,7 @@
               información confiable para la obra.
             </p>
           </div>
-          <img src="./img/MODELO DE ANÁLISIS PLATAFORMAS PROYECTO 10K.webp" alt="Modelo de análisis estructural BIM" />
+          <img width="1918" height="802" src="./img/MODELO DE ANÁLISIS PLATAFORMAS PROYECTO 10K.webp" alt="Modelo de análisis estructural BIM" />
         </div>
       </div>
     </section>
@@ -218,19 +223,19 @@
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16l4-6 3 4 4-7"/></svg>
             <h3>Diseño estructural</h3>
             <p>Concreto, acero y soluciones mixtas según el alcance del proyecto, cumpliendo NSR-10.</p>
-            <a class="link" href="#contacto">Cotizar →</a>
+            <a class="link" href="#contacto">Cotizar diseño →</a>
           </article>
           <article class="plan-card service reveal">
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v3l2 2"/></svg>
             <h3>Revisión y reforzamiento</h3>
             <p>Diagnóstico, patología estructural, propuesta de refuerzo y documentación para intervención.</p>
-            <a class="link" href="#contacto">Consultar →</a>
+            <a class="link" href="#contacto">Consultar revisión →</a>
           </article>
           <article class="plan-card service reveal">
             <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5Z"/><path d="M3 7l9 5 9-5M12 12v9"/></svg>
             <h3>BIM / Revit</h3>
             <p>Modelado, coordinación entre disciplinas y extracción de planos y cantidades.</p>
-            <a class="link" href="#contacto">Hablar →</a>
+            <a class="link" href="#contacto">Hablar de BIM →</a>
           </article>
         </div>
       </div>
@@ -246,74 +251,74 @@
         </div>
 
         <div class="filter-bar reveal" id="filterBar" role="group" aria-label="Filtrar proyectos por categoría">
-          <button class="filter-btn active" data-filter="all">Todos</button>
-          <button class="filter-btn" data-filter="edificacion">Edificación</button>
-          <button class="filter-btn" data-filter="puentes">Puentes</button>
-          <button class="filter-btn" data-filter="infraestructura">Infraestructura</button>
-          <button class="filter-btn" data-filter="maritimo">Marítimo</button>
-          <button class="filter-btn" data-filter="hidrocarburos">Hidrocarburos</button>
+          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">Todos</button>
+          <button type="button" class="filter-btn" data-filter="edificacion" aria-pressed="false">Edificación</button>
+          <button type="button" class="filter-btn" data-filter="puentes" aria-pressed="false">Puentes</button>
+          <button type="button" class="filter-btn" data-filter="infraestructura" aria-pressed="false">Infraestructura</button>
+          <button type="button" class="filter-btn" data-filter="maritimo" aria-pressed="false">Marítimo</button>
+          <button type="button" class="filter-btn" data-filter="hidrocarburos" aria-pressed="false">Hidrocarburos</button>
         </div>
 
         <div class="project-grid" id="projectGrid">
-          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Aeropuerto de Cartagena en grande" data-cat="infraestructura">
                         <div class="project-media">
-<img src="./img/aeropuerto cartagena 2.webp" alt="Aeropuerto de Cartagena" loading="lazy" />
+<img width="1920" height="1080" src="./img/aeropuerto cartagena 2.webp" alt="Aeropuerto de Cartagena" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Infraestructura</span><strong>Aeropuerto de Cartagena</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="edificacion">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Escenario Deportivo Santa Ana — Valle del Cauca en grande" data-cat="edificacion">
                         <div class="project-media">
-<img src="./img/POLIDEPORTIVO 1.webp" alt="Escenario deportivo Santa Ana" loading="lazy" />
+<img width="1920" height="1080" src="./img/POLIDEPORTIVO 1.webp" alt="Escenario deportivo Santa Ana" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Edificación</span><strong>Escenario Deportivo Santa Ana — Valle del Cauca</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="puentes">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Puente Ródano en grande" data-cat="puentes">
                         <div class="project-media">
-<img src="./img/puente rodano 2.webp" alt="Puente Ródano" loading="lazy" />
+<img width="1920" height="1080" src="./img/puente rodano 2.webp" alt="Puente Ródano" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Puentes</span><strong>Puente Ródano</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="maritimo">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Armada Nacional — San Andrés en grande" data-cat="maritimo">
                         <div class="project-media">
-<img src="./img/ARMADA DE SAN ANDRES.webp" alt="Estructura Armada de San Andrés" loading="lazy" />
+<img width="1011" height="806" src="./img/ARMADA DE SAN ANDRES.webp" alt="Estructura Armada de San Andrés" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Marítimo</span><strong>Armada Nacional — San Andrés</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="hidrocarburos">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Tanque PUMA — Belize en grande" data-cat="hidrocarburos">
                         <div class="project-media">
-<img src="./img/TANQUE PUMA BELIZE.webp" alt="Tanque Puma Belize" loading="lazy" />
+<img width="814" height="737" src="./img/TANQUE PUMA BELIZE.webp" alt="Tanque Puma Belize" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Hidrocarburos</span><strong>Tanque PUMA — Belize</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="edificacion">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Clínica Procardio en grande" data-cat="edificacion">
                         <div class="project-media">
-<img src="./img/clinica procardio 1.webp" alt="Clínica Procardio" loading="lazy" />
+<img width="1920" height="1080" src="./img/clinica procardio 1.webp" alt="Clínica Procardio" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Edificación</span><strong>Clínica Procardio</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="puentes">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Puente Villa Restrepo en grande" data-cat="puentes">
                         <div class="project-media">
-<img src="./img/PUENTE VILLA RESTREPO.webp" alt="Puente Villa Restrepo" loading="lazy" />
+<img width="875" height="332" src="./img/PUENTE VILLA RESTREPO.webp" alt="Puente Villa Restrepo" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Puentes</span><strong>Puente Villa Restrepo</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="infraestructura">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Muro de Contención — San Gil en grande" data-cat="infraestructura">
                         <div class="project-media">
-<img src="./img/MURO DE CONTENCION SAN GIL.webp" alt="Muro de contención San Gil" loading="lazy" />
+<img width="458" height="296" src="./img/MURO DE CONTENCION SAN GIL.webp" alt="Muro de contención San Gil" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Infraestructura</span><strong>Muro de Contención — San Gil</strong></figcaption>
           </figure>
-          <figure class="project reveal" tabindex="0" data-cat="maritimo">
+          <figure class="project reveal" tabindex="0" role="button" aria-label="Ver Faro — San Andrés en grande" data-cat="maritimo">
                         <div class="project-media">
-<img src="./img/FARO SAN ANDRES.webp" alt="Faro San Andrés" loading="lazy" />
+<img width="828" height="601" src="./img/FARO SAN ANDRES.webp" alt="Faro San Andrés" loading="lazy" />
             <span class="project-zoom-hint" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></span>
             </div>
             <figcaption><span class="tag">Marítimo</span><strong>Faro — San Andrés</strong></figcaption>
@@ -384,10 +389,10 @@
               Escríbenos por WhatsApp
             </a>
 
-            <div class="info-row"><span class="info-label">WhatsApp</span><a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a></div>
+            <div class="info-row"><span class="info-label">WhatsApp</span><a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57&nbsp;311&nbsp;222&nbsp;8420</a></div>
             <div class="info-row"><span class="info-label">Email</span><a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a></div>
             <div class="info-row"><span class="info-label">Ubicación</span><span>Colombia</span></div>
-            <div class="info-row"><span class="info-label">Horario</span><span>Lun–Vie · 8:00 a.m. – 6:00 p.m.</span></div>
+            <div class="info-row"><span class="info-label">Horario</span><span>Lun–Vie · 8:00&nbsp;a.m. – 6:00&nbsp;p.m.</span></div>
 
             <div class="portal-note">
               <p>¿Ya eres cliente?</p>
@@ -403,7 +408,7 @@
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <span class="brand-text small">SD<em>4</em>A</span>
+        <span class="brand-text small" translate="no">SD<em>4</em>A</span>
         <p>Structural Design For Art — ingeniería estructural con enfoque BIM para edificaciones, puentes e infraestructura en Colombia.</p>
       </div>
 
@@ -417,7 +422,7 @@
 
       <div class="footer-links">
         <p class="footer-col-title">Contacto</p>
-        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57 311 222 8420</a>
+        <a href="https://wa.me/573112228420" target="_blank" rel="noopener noreferrer">+57&nbsp;311&nbsp;222&nbsp;8420</a>
         <a href="mailto:sd4asas@gmail.com">sd4asas@gmail.com</a>
         <a href="https://pagos-sd-4-a.vercel.app/login">Ingreso al Portal →</a>
       </div>
@@ -450,7 +455,7 @@
   </button>
 
   <!-- ══════════ AVISO DE COOKIES ══════════ -->
-  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden>
+  <div class="cookie-banner" id="cookieBanner" role="region" aria-label="Aviso de cookies" hidden>
     <p>
       Usamos cookies esenciales para el funcionamiento del sitio. Al continuar navegando, aceptas nuestra
       <a href="./privacidad.html">Política de privacidad</a>.
@@ -458,10 +463,10 @@
     <button class="btn btn-solid btn-small" id="cookieAccept">Aceptar</button>
   </div>
 
-  <script src="./js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-  <script src="./js/fx.js"></script>
+  <script defer src="./js/main.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script defer src="./js/fx.js"></script>
 </body>
 </html>

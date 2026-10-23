@@ -1,42 +1,76 @@
 // ═══════════ SD4A — interacciones ═══════════
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+// localStorage puede lanzar error (navegación privada, datos bloqueados)
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch (e) { /* sin persistencia */ } },
+};
+
 // ── Slider del hero con dots ─────────────────────────────────────
 const slides = document.querySelectorAll(".hero-slides .slide");
 const dotsBox = document.getElementById("heroDots");
 let current = 0;
 let sliderTimer = null;
+let paused = reduced; // con "reducir movimiento" no hay rotación automática
+const heroSection = document.getElementById("inicio");
+const dotButtons = [];
 
 function goTo(i) {
   slides[current].classList.remove("active");
-  dotsBox.children[current]?.classList.remove("active");
+  dotButtons[current]?.classList.remove("active");
+  dotButtons[current]?.removeAttribute("aria-current");
   current = i;
   slides[current].classList.add("active");
-  dotsBox.children[current]?.classList.add("active");
+  dotButtons[current]?.classList.add("active");
+  dotButtons[current]?.setAttribute("aria-current", "true");
 }
 function nextSlide() { goTo((current + 1) % slides.length); }
 function restartTimer() {
   clearInterval(sliderTimer);
-  sliderTimer = setInterval(nextSlide, 6000);
+  if (!paused) sliderTimer = setInterval(nextSlide, 6000);
 }
 
 if (slides.length > 1 && dotsBox) {
   slides.forEach((_, i) => {
     const b = document.createElement("button");
-    if (i === 0) b.classList.add("active");
+    b.type = "button";
+    b.setAttribute("aria-label", `Ver imagen ${i + 1} de ${slides.length}`);
+    if (i === 0) { b.classList.add("active"); b.setAttribute("aria-current", "true"); }
     b.addEventListener("click", () => { goTo(i); restartTimer(); });
     dotsBox.appendChild(b);
+    dotButtons.push(b);
   });
+
+  // Botón de pausa: detiene el cambio de imágenes y las animaciones decorativas del hero
+  const pauseBtn = document.createElement("button");
+  pauseBtn.type = "button";
+  pauseBtn.className = "hero-pause";
+  const syncPause = () => {
+    pauseBtn.setAttribute("aria-label", paused ? "Reanudar presentación" : "Pausar presentación");
+    pauseBtn.setAttribute("aria-pressed", String(paused));
+    pauseBtn.innerHTML = paused
+      ? '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 4l13 8-13 8z" fill="currentColor"/></svg>'
+      : '<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>';
+    heroSection.classList.toggle("is-paused", paused);
+  };
+  pauseBtn.addEventListener("click", () => { paused = !paused; syncPause(); restartTimer(); });
+  dotsBox.appendChild(pauseBtn);
+  syncPause();
   restartTimer();
 }
 
 // ── Sombra del topbar + regla de avance de lectura ───────────────
 const topbar = document.getElementById("topbar");
 const scrollRuler = document.getElementById("scrollRuler");
+let scrollMax = 0;
+const measureScroll = () => { scrollMax = document.documentElement.scrollHeight - window.innerHeight; };
+measureScroll();
+window.addEventListener("resize", measureScroll);
+window.addEventListener("load", measureScroll);
 window.addEventListener("scroll", () => {
   topbar.classList.toggle("scrolled", window.scrollY > 10);
-  const max = document.documentElement.scrollHeight - window.innerHeight;
-  const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+  const pct = scrollMax > 0 ? (window.scrollY / scrollMax) * 100 : 0;
   scrollRuler.style.width = `${Math.min(100, Math.max(0, pct))}%`;
 }, { passive: true });
 
@@ -48,12 +82,14 @@ navToggle.addEventListener("click", () => {
   const open = nav.classList.toggle("open");
   navToggle.classList.toggle("open", open);
   navToggle.setAttribute("aria-expanded", String(open));
+  navToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
 });
 nav.querySelectorAll("a").forEach((a) =>
   a.addEventListener("click", () => {
     nav.classList.remove("open");
     navToggle.classList.remove("open");
     navToggle.setAttribute("aria-expanded", "false");
+    navToggle.setAttribute("aria-label", "Abrir menú");
   })
 );
 
@@ -104,13 +140,14 @@ if (reduced || !("IntersectionObserver" in window)) {
 const heroEl = document.getElementById("inicio");
 if (heroEl && !reduced) {
   const slidesLayer = heroEl.querySelector(".hero-slides");
+  let heroHeight = heroEl.offsetHeight;
+  window.addEventListener("resize", () => { heroHeight = heroEl.offsetHeight; });
   let ticking = false;
   window.addEventListener("scroll", () => {
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
-      const rect = heroEl.getBoundingClientRect();
-      if (rect.bottom > 0) {
+      if (window.scrollY < heroHeight) {
         slidesLayer.style.transform = `translateY(${window.scrollY * 0.18}px)`;
       }
       ticking = false;
@@ -150,16 +187,29 @@ const filterBar = document.getElementById("filterBar");
 if (filterBar) {
   const filterBtns = [...filterBar.querySelectorAll(".filter-btn")];
   const allProjects = [...document.querySelectorAll("#projectGrid .project")];
-  filterBar.addEventListener("click", (e) => {
-    const btn = e.target.closest(".filter-btn");
-    if (!btn) return;
-    filterBtns.forEach((b) => b.classList.toggle("active", b === btn));
-    const filter = btn.dataset.filter;
+  function applyFilter(filter) {
+    filterBtns.forEach((b) => {
+      const on = b.dataset.filter === filter;
+      b.classList.toggle("active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
     allProjects.forEach((p) => {
       const show = filter === "all" || p.dataset.cat === filter;
       p.classList.toggle("filtered-out", !show);
     });
+  }
+  filterBar.addEventListener("click", (e) => {
+    const btn = e.target.closest(".filter-btn");
+    if (!btn) return;
+    const filter = btn.dataset.filter;
+    applyFilter(filter);
+    // El filtro queda en la URL (?categoria=puentes) para poder compartirlo
+    const url = new URL(window.location.href);
+    if (filter === "all") url.searchParams.delete("categoria"); else url.searchParams.set("categoria", filter);
+    history.replaceState(null, "", url);
   });
+  const initial = new URLSearchParams(window.location.search).get("categoria");
+  if (initial && filterBtns.some((b) => b.dataset.filter === initial)) applyFilter(initial);
 }
 
 // ── Botón volver arriba ───────────────────────────────────────────
@@ -177,11 +227,11 @@ if (backToTop) {
 const cookieBanner = document.getElementById("cookieBanner");
 const cookieAccept = document.getElementById("cookieAccept");
 if (cookieBanner && cookieAccept) {
-  if (!localStorage.getItem("sd4a_cookies_accepted")) {
+  if (!store.get("sd4a_cookies_accepted")) {
     cookieBanner.hidden = false;
   }
   cookieAccept.addEventListener("click", () => {
-    localStorage.setItem("sd4a_cookies_accepted", "true");
+    store.set("sd4a_cookies_accepted", "true");
     cookieBanner.hidden = true;
   });
 }
@@ -192,8 +242,10 @@ const lbImg = document.getElementById("lbImg");
 const lbCaption = document.getElementById("lbCaption");
 const projects = [...document.querySelectorAll("#projectGrid .project")];
 let lbIndex = 0;
+let lbOpener = null;
 
 function openLightbox(i) {
+  if (lightbox.hidden) lbOpener = document.activeElement;
   lbIndex = i;
   const img = projects[i].querySelector("img");
   const cap = projects[i].querySelector("figcaption strong");
@@ -203,11 +255,13 @@ function openLightbox(i) {
   lightbox.hidden = false;
   requestAnimationFrame(() => lightbox.classList.add("open"));
   document.body.classList.add("lb-locked");
+  document.getElementById("lbClose").focus();
 }
 function closeLightbox() {
   lightbox.classList.remove("open");
   document.body.classList.remove("lb-locked");
   setTimeout(() => { lightbox.hidden = true; }, 250);
+  if (lbOpener) lbOpener.focus();
 }
 function stepLightbox(delta) {
   openLightbox((lbIndex + delta + projects.length) % projects.length);
@@ -228,4 +282,11 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
   if (e.key === "ArrowLeft") stepLightbox(-1);
   if (e.key === "ArrowRight") stepLightbox(1);
+  if (e.key === "Tab") {
+    // El foco se queda dentro del visor mientras está abierto
+    const f = [...lightbox.querySelectorAll("button")];
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });

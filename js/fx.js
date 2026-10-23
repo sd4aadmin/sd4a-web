@@ -23,7 +23,7 @@
           var target = id.length > 1 && document.querySelector(id);
           if (!target) return;
           e.preventDefault();
-          lenis.scrollTo(target, { offset: -64, duration: 1.4, easing: function (t) { return 1 - Math.pow(1 - t, 4); } });
+          lenis.scrollTo(target, { offset: -68, duration: 1.4, easing: function (t) { return 1 - Math.pow(1 - t, 4); } });
         });
       });
       var back = document.getElementById("backToTop");
@@ -31,6 +31,8 @@
     }
 
     /* ── Barra de progreso de lectura ── */
+    var oldRuler = document.getElementById("scrollRuler");
+    if (oldRuler) oldRuler.remove(); // evita dos barras de progreso a la vez
     var bar = document.createElement("div");
     bar.id = "scrollbar";
     bar.setAttribute("aria-hidden", "true");
@@ -131,11 +133,13 @@
     /* ── Inclinación 3D y brillo que sigue al cursor (solo con mouse) ── */
     if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
       gsap.utils.toArray(".plan-card, .sector, .step").forEach(function (card) {
+        var rect = null;
         var rx = gsap.quickTo(card, "rotationX", { duration: 0.5, ease: "power3.out" });
         var ry = gsap.quickTo(card, "rotationY", { duration: 0.5, ease: "power3.out" });
         gsap.set(card, { transformPerspective: 900 });
+        card.addEventListener("pointerenter", function () { rect = card.getBoundingClientRect(); });
         card.addEventListener("pointermove", function (e) {
-          var r = card.getBoundingClientRect();
+          var r = rect || (rect = card.getBoundingClientRect());
           var px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
           ry((px - 0.5) * 9); rx((0.5 - py) * 9);
           card.style.setProperty("--mx", px * 100 + "%");
