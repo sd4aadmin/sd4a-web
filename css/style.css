@@ -34,7 +34,8 @@ body {
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
 }
-img { max-width: 100%; display: block; }
+/* height:auto: con width/height en el HTML (evitan saltos de carga) la imagen conserva su proporción al reducirse */
+img { max-width: 100%; height: auto; display: block; }
 a { color: var(--teal); text-decoration: none; }
 a, button { touch-action: manipulation; -webkit-tap-highlight-color: rgba(10, 120, 129, 0.18); }
 h1, h2, h3 { text-wrap: balance; }
